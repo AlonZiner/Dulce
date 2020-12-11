@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  RegisterViewController.swift
 //  Test
 //
 //  Created by admin on 11/12/2020.
@@ -8,15 +8,10 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class RegisterViewController: UIViewController {
 
-    override func viewDidLoad() {
+override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        self.title = "Profile"
     }
-
-
 }
-

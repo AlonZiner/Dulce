@@ -9,23 +9,35 @@
 /* Begin PBXBuildFile section */
 		8486BF5E25837F5800ECEE7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF5D25837F5800ECEE7D /* AppDelegate.swift */; };
 		8486BF6025837F5800ECEE7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF5F25837F5800ECEE7D /* SceneDelegate.swift */; };
-		8486BF6225837F5800ECEE7D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF6125837F5800ECEE7D /* FirstViewController.swift */; };
-		8486BF6425837F5800ECEE7D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF6325837F5800ECEE7D /* SecondViewController.swift */; };
 		8486BF6725837F5800ECEE7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486BF6525837F5800ECEE7D /* Main.storyboard */; };
 		8486BF6925837F5E00ECEE7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8486BF6825837F5E00ECEE7D /* Assets.xcassets */; };
 		8486BF6C25837F5E00ECEE7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486BF6A25837F5E00ECEE7D /* LaunchScreen.storyboard */; };
+		8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF732583815A00ECEE7D /* LoginViewController.swift */; };
+		8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF75258382FD00ECEE7D /* RegisterViewController.swift */; };
+		8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF772583997B00ECEE7D /* CustomTabBarControllerViewController.swift */; };
+		8486BF7B2583A05300ECEE7D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */; };
+		8486BF7D2583A10700ECEE7D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF7C2583A10700ECEE7D /* HomeViewController.swift */; };
+		8486BF7F2583A11400ECEE7D /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF7E2583A11400ECEE7D /* FriendsViewController.swift */; };
+		8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF802583A11F00ECEE7D /* ChatViewController.swift */; };
+		8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF822583A13400ECEE7D /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8486BF5A25837F5800ECEE7D /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8486BF5A25837F5800ECEE7D /* Dulce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dulce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8486BF5D25837F5800ECEE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8486BF5F25837F5800ECEE7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8486BF6125837F5800ECEE7D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		8486BF6325837F5800ECEE7D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8486BF6625837F5800ECEE7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8486BF6825837F5E00ECEE7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8486BF6B25837F5E00ECEE7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8486BF6D25837F5E00ECEE7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8486BF732583815A00ECEE7D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		8486BF75258382FD00ECEE7D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		8486BF772583997B00ECEE7D /* CustomTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarControllerViewController.swift; sourceTree = "<group>"; };
+		8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		8486BF7C2583A10700ECEE7D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		8486BF7E2583A11400ECEE7D /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		8486BF802583A11F00ECEE7D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		8486BF822583A13400ECEE7D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +62,7 @@
 		8486BF5B25837F5800ECEE7D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8486BF5A25837F5800ECEE7D /* Test.app */,
+				8486BF5A25837F5800ECEE7D /* Dulce.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,10 +70,10 @@
 		8486BF5C25837F5800ECEE7D /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				8486BF842583A27400ECEE7D /* CustomElements */,
+				8486BF792583A02D00ECEE7D /* ViewControllers */,
 				8486BF5D25837F5800ECEE7D /* AppDelegate.swift */,
 				8486BF5F25837F5800ECEE7D /* SceneDelegate.swift */,
-				8486BF6125837F5800ECEE7D /* FirstViewController.swift */,
-				8486BF6325837F5800ECEE7D /* SecondViewController.swift */,
 				8486BF6525837F5800ECEE7D /* Main.storyboard */,
 				8486BF6825837F5E00ECEE7D /* Assets.xcassets */,
 				8486BF6A25837F5E00ECEE7D /* LaunchScreen.storyboard */,
@@ -70,12 +82,34 @@
 			path = Test;
 			sourceTree = "<group>";
 		};
+		8486BF792583A02D00ECEE7D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8486BF75258382FD00ECEE7D /* RegisterViewController.swift */,
+				8486BF732583815A00ECEE7D /* LoginViewController.swift */,
+				8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */,
+				8486BF7C2583A10700ECEE7D /* HomeViewController.swift */,
+				8486BF7E2583A11400ECEE7D /* FriendsViewController.swift */,
+				8486BF802583A11F00ECEE7D /* ChatViewController.swift */,
+				8486BF822583A13400ECEE7D /* FavoritesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8486BF842583A27400ECEE7D /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				8486BF772583997B00ECEE7D /* CustomTabBarControllerViewController.swift */,
+			);
+			path = CustomElements;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8486BF5925837F5800ECEE7D /* Test */ = {
+		8486BF5925837F5800ECEE7D /* Dulce */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8486BF7025837F5E00ECEE7D /* Build configuration list for PBXNativeTarget "Test" */;
+			buildConfigurationList = 8486BF7025837F5E00ECEE7D /* Build configuration list for PBXNativeTarget "Dulce" */;
 			buildPhases = (
 				8486BF5625837F5800ECEE7D /* Sources */,
 				8486BF5725837F5800ECEE7D /* Frameworks */,
@@ -85,9 +119,9 @@
 			);
 			dependencies = (
 			);
-			name = Test;
+			name = Dulce;
 			productName = Test;
-			productReference = 8486BF5A25837F5800ECEE7D /* Test.app */;
+			productReference = 8486BF5A25837F5800ECEE7D /* Dulce.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -105,7 +139,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8486BF5525837F5800ECEE7D /* Build configuration list for PBXProject "Test" */;
+			buildConfigurationList = 8486BF5525837F5800ECEE7D /* Build configuration list for PBXProject "Dulce" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -118,7 +152,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8486BF5925837F5800ECEE7D /* Test */,
+				8486BF5925837F5800ECEE7D /* Dulce */,
 			);
 		};
 /* End PBXProject section */
@@ -141,9 +175,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8486BF6425837F5800ECEE7D /* SecondViewController.swift in Sources */,
-				8486BF6225837F5800ECEE7D /* FirstViewController.swift in Sources */,
+				8486BF7F2583A11400ECEE7D /* FriendsViewController.swift in Sources */,
+				8486BF7B2583A05300ECEE7D /* ProfileViewController.swift in Sources */,
+				8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */,
 				8486BF5E25837F5800ECEE7D /* AppDelegate.swift in Sources */,
+				8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */,
+				8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */,
+				8486BF7D2583A10700ECEE7D /* HomeViewController.swift in Sources */,
+				8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */,
+				8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */,
 				8486BF6025837F5800ECEE7D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,7 +335,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Dulce.Test;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Dulce;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -312,7 +352,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Dulce.Test;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Dulce;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -321,7 +361,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8486BF5525837F5800ECEE7D /* Build configuration list for PBXProject "Test" */ = {
+		8486BF5525837F5800ECEE7D /* Build configuration list for PBXProject "Dulce" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8486BF6E25837F5E00ECEE7D /* Debug */,
@@ -330,7 +370,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8486BF7025837F5E00ECEE7D /* Build configuration list for PBXNativeTarget "Test" */ = {
+		8486BF7025837F5E00ECEE7D /* Build configuration list for PBXNativeTarget "Dulce" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8486BF7125837F5E00ECEE7D /* Debug */,
