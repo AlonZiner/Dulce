@@ -23,11 +23,11 @@ class CustomTabBarControllerViewController: UITabBarController {
     
     @objc func setText() {
         
-        tabBar.items?[0].title = "Home"
-        tabBar.items?[1].title = "Favorites"
-        tabBar.items?[2].title = "Chat"
-        tabBar.items?[3].title = "Friends"
-        tabBar.items?[4].title = "Profile"
+        tabBar.items?[0].title = "Favorites"
+        tabBar.items?[1].title = "Chat"
+        tabBar.items?[2].title = "Friends"
+        tabBar.items?[3].title = "Profile"
+        tabBar.items?[4].title = "Home"
     }
     
     /*
