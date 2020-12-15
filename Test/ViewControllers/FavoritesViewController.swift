@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import Firebase
 
 class FavoritesViewController: UIViewController {
 
+    @IBOutlet weak var userName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // example for using authinticated user data in app
+        if let user = Auth.auth().currentUser {
+            userName.text = user.displayName ?? ""
+        }
     }
     
 

@@ -31,13 +31,13 @@
                                     <action selector="GoToRegeister:" destination="ZF5-5E-UFC" eventType="touchUpInside" id="cu4-kv-SCC"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MiA-QV-i7s" customClass="GIDSignInButton">
+                            <view contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="googleLogin" translatesAutoresizingMaskIntoConstraints="NO" id="MiA-QV-i7s" customClass="GIDSignInButton">
                                 <rect key="frame" x="87" y="441" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="2vt-UU-XVE"/>
                     </view>
                     <navigationItem key="navigationItem" id="tzc-1P-IBD"/>
@@ -228,15 +228,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="userName" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4k-U2-YmC">
+                                <rect key="frame" x="66" y="92" width="283" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="43"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="qhK-SH-Tvz"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="4nH-g3-gQd"/>
+                    <connections>
+                        <outlet property="userName" destination="u4k-U2-YmC" id="EGy-Ko-gVd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ED-8j-5gN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2645" y="432"/>
+            <point key="canvasLocation" x="2644.9275362318845" y="431.91964285714283"/>
         </scene>
         <!--Item-->
         <scene sceneID="fXq-22-szh">
