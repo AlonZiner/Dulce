@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import GoogleSignIn
 
 class ProfileViewController: UIViewController {
 
@@ -16,13 +18,23 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func LogOut(_ sender: Any) {
-        // ...
-        // after user has successfully logged out
+        GIDSignIn.sharedInstance()?.signOut()
         
-          let storyboard = UIStoryboard(name: "Main", bundle: nil)
-          let loginNavController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
+        // Sign out from Firebase
+        do {
+            try Auth.auth().signOut()
+            
+            // Update screen after user successfully signed out
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginNavController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
 
-          (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(loginNavController)
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(loginNavController)
+            print("user successfully sign out")
+
+        } catch let error as NSError {
+            print ("Error signing out from Firebase: %@", error)
+        }
     }
     
     /*

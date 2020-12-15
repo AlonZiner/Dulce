@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1028482061186-uucdu68g6uchrv97005app0in3g7gbdp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1028482061186-uucdu68g6uchrv97005app0in3g7gbdp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCqWfLww_H55AWGM_YhjaI3b__g5t7h8Ug</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1028482061186</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Dulce.Test</string>
+	<key>PROJECT_ID</key>
+	<string>dulce-acbaa</string>
+	<key>STORAGE_BUCKET</key>
+	<string>dulce-acbaa.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1028482061186:ios:70b96e4ce8a97932a5759b</string>
+</dict>
+</plist>

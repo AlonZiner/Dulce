@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,10 +19,14 @@
 		8486BF7F2583A11400ECEE7D /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF7E2583A11400ECEE7D /* FriendsViewController.swift */; };
 		8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF802583A11F00ECEE7D /* ChatViewController.swift */; };
 		8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF822583A13400ECEE7D /* FavoritesViewController.swift */; };
+		8486F56325890DCD00469BCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8486F56225890DCD00469BCB /* GoogleService-Info.plist */; };
 		848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */; };
+		8E2355C97DD11AD5ACA700CB /* Pods_Dulce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F993D0162698BC4303B563 /* Pods_Dulce.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65F993D0162698BC4303B563 /* Pods_Dulce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dulce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FDAFFDFC96E322C8F5E63F6 /* Pods-Dulce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dulce.release.xcconfig"; path = "Target Support Files/Pods-Dulce/Pods-Dulce.release.xcconfig"; sourceTree = "<group>"; };
 		8486BF5A25837F5800ECEE7D /* Dulce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dulce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8486BF5D25837F5800ECEE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8486BF5F25837F5800ECEE7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +41,9 @@
 		8486BF7E2583A11400ECEE7D /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		8486BF802583A11F00ECEE7D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8486BF822583A13400ECEE7D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		8486F56225890DCD00469BCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableTableViewController.swift; sourceTree = "<group>"; };
+		DD517D100FA7481611C393D0 /* Pods-Dulce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dulce.debug.xcconfig"; path = "Target Support Files/Pods-Dulce/Pods-Dulce.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +51,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E2355C97DD11AD5ACA700CB /* Pods_Dulce.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11D9AB04FBC40AA3F26EC9CD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				65F993D0162698BC4303B563 /* Pods_Dulce.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8486BF5125837F5800ECEE7D = {
 			isa = PBXGroup;
 			children = (
 				8486BF5C25837F5800ECEE7D /* Test */,
 				8486BF5B25837F5800ECEE7D /* Products */,
+				CC6D1A8D0CC78772877AAB2D /* Pods */,
+				11D9AB04FBC40AA3F26EC9CD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +87,7 @@
 		8486BF5C25837F5800ECEE7D /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				8486F56225890DCD00469BCB /* GoogleService-Info.plist */,
 				8486BF842583A27400ECEE7D /* CustomElements */,
 				8486BF792583A02D00ECEE7D /* ViewControllers */,
 				8486BF5D25837F5800ECEE7D /* AppDelegate.swift */,
@@ -104,6 +122,15 @@
 			path = CustomElements;
 			sourceTree = "<group>";
 		};
+		CC6D1A8D0CC78772877AAB2D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DD517D100FA7481611C393D0 /* Pods-Dulce.debug.xcconfig */,
+				7FDAFFDFC96E322C8F5E63F6 /* Pods-Dulce.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -111,9 +138,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8486BF7025837F5E00ECEE7D /* Build configuration list for PBXNativeTarget "Dulce" */;
 			buildPhases = (
+				8647F7EFE3746C5C08796B83 /* [CP] Check Pods Manifest.lock */,
 				8486BF5625837F5800ECEE7D /* Sources */,
 				8486BF5725837F5800ECEE7D /* Frameworks */,
 				8486BF5825837F5800ECEE7D /* Resources */,
+				F0F059FA612CD19D7F2189EC /* [CP] Embed Pods Frameworks */,
+				AD6BC89EB9153EA976E1E3D7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -163,12 +193,72 @@
 			buildActionMask = 2147483647;
 			files = (
 				8486BF6C25837F5E00ECEE7D /* LaunchScreen.storyboard in Resources */,
+				8486F56325890DCD00469BCB /* GoogleService-Info.plist in Resources */,
 				8486BF6925837F5E00ECEE7D /* Assets.xcassets in Resources */,
 				8486BF6725837F5800ECEE7D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8647F7EFE3746C5C08796B83 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Dulce-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD6BC89EB9153EA976E1E3D7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dulce/Pods-Dulce-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dulce/Pods-Dulce-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dulce/Pods-Dulce-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F0F059FA612CD19D7F2189EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dulce/Pods-Dulce-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Dulce/Pods-Dulce-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Dulce/Pods-Dulce-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8486BF5625837F5800ECEE7D /* Sources */ = {
@@ -326,6 +416,7 @@
 		};
 		8486BF7125837F5E00ECEE7D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD517D100FA7481611C393D0 /* Pods-Dulce.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -343,6 +434,7 @@
 		};
 		8486BF7225837F5E00ECEE7D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FDAFFDFC96E322C8F5E63F6 /* Pods-Dulce.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
