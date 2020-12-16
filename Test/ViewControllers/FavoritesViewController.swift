@@ -26,6 +26,8 @@ class FavoritesViewController: UIViewController {
 
     @IBAction func addToDb(_ sender: Any) {
         let model = ModelFirebase.model
-        model.addRecepie()
+        model.addRecipe()
     }
+    
+    
 }

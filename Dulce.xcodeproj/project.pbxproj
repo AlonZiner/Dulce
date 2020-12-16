@@ -23,6 +23,7 @@
 		848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */; };
 		8E2355C97DD11AD5ACA700CB /* Pods_Dulce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F993D0162698BC4303B563 /* Pods_Dulce.framework */; };
 		CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */; };
+		CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDBA258A82D9004059B6 /* RecipeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		8486F56225890DCD00469BCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableTableViewController.swift; sourceTree = "<group>"; };
 		CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
+		CB64DDBA258A82D9004059B6 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		DD517D100FA7481611C393D0 /* Pods-Dulce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dulce.debug.xcconfig"; path = "Target Support Files/Pods-Dulce/Pods-Dulce.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 		8486BF5C25837F5800ECEE7D /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				CB64DDB9258A8235004059B6 /* Enteties */,
 				CB64DDB6258A70A1004059B6 /* Model */,
 				8486F56225890DCD00469BCB /* GoogleService-Info.plist */,
 				8486BF842583A27400ECEE7D /* CustomElements */,
@@ -129,8 +132,16 @@
 			isa = PBXGroup;
 			children = (
 				CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */,
+				CB64DDBA258A82D9004059B6 /* RecipeModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CB64DDB9258A8235004059B6 /* Enteties */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enteties;
 			sourceTree = "<group>";
 		};
 		CC6D1A8D0CC78772877AAB2D /* Pods */ = {
@@ -281,6 +292,7 @@
 				8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */,
 				8486BF5E25837F5800ECEE7D /* AppDelegate.swift in Sources */,
 				8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */,
+				CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */,
 				8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */,
 				8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */,
 				CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */,

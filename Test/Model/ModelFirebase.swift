@@ -17,8 +17,4 @@ class ModelFirebase {
     private init() {
         ref = Database.database(url: "https://dulce-acbaa-default-rtdb.europe-west1.firebasedatabase.app").reference()
     }
-    
-    func addRecepie() -> () {
-        self.ref.child("recepies").child("2").setValue("pizza bulgarit")
-    }
 }
