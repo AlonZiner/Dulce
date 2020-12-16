@@ -13,6 +13,8 @@ import FirebaseDatabase
 class Recipemodel {
     static let model = ModelFirebase.model.ref.child("recipes")
     
+    private init(){}
+    
     static func addRecipe() -> () {
         model.child("3").setValue("pizza pizza")
     }
