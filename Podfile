@@ -6,7 +6,10 @@ target 'Dulce' do
   use_frameworks!
 
   # Pods for Dulce
+  pod 'Firebase'
+  pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'GoogleSignIn'
+  
 end

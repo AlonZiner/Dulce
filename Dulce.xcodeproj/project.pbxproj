@@ -22,6 +22,7 @@
 		8486F56325890DCD00469BCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8486F56225890DCD00469BCB /* GoogleService-Info.plist */; };
 		848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */; };
 		8E2355C97DD11AD5ACA700CB /* Pods_Dulce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F993D0162698BC4303B563 /* Pods_Dulce.framework */; };
+		CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		8486BF822583A13400ECEE7D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8486F56225890DCD00469BCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableTableViewController.swift; sourceTree = "<group>"; };
+		CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		DD517D100FA7481611C393D0 /* Pods-Dulce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dulce.debug.xcconfig"; path = "Target Support Files/Pods-Dulce/Pods-Dulce.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,6 +89,7 @@
 		8486BF5C25837F5800ECEE7D /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				CB64DDB6258A70A1004059B6 /* Model */,
 				8486F56225890DCD00469BCB /* GoogleService-Info.plist */,
 				8486BF842583A27400ECEE7D /* CustomElements */,
 				8486BF792583A02D00ECEE7D /* ViewControllers */,
@@ -120,6 +123,14 @@
 				848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */,
 			);
 			path = CustomElements;
+			sourceTree = "<group>";
+		};
+		CB64DDB6258A70A1004059B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		CC6D1A8D0CC78772877AAB2D /* Pods */ = {
@@ -272,6 +283,7 @@
 				8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */,
 				8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */,
 				8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */,
+				CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */,
 				8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */,
 				848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */,
 				8486BF6025837F5800ECEE7D /* SceneDelegate.swift in Sources */,
