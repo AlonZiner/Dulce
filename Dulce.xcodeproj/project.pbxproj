@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8483E4F6258CAD7200A228E9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F5258CAD7200A228E9 /* Category.swift */; };
+		8483E4F8258CAEA600A228E9 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F7258CAEA600A228E9 /* Recipe.swift */; };
+		8483E4FA258CAFA600A228E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F9258CAFA600A228E9 /* User.swift */; };
+		8483E4FD258CB14000A228E9 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4FC258CB14000A228E9 /* CategoryModel.swift */; };
+		8483E4FF258CB14B00A228E9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4FE258CB14B00A228E9 /* UserModel.swift */; };
 		8486BF5E25837F5800ECEE7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF5D25837F5800ECEE7D /* AppDelegate.swift */; };
 		8486BF6025837F5800ECEE7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF5F25837F5800ECEE7D /* SceneDelegate.swift */; };
 		8486BF6725837F5800ECEE7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486BF6525837F5800ECEE7D /* Main.storyboard */; };
@@ -25,12 +30,17 @@
 		CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */; };
 		CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDBA258A82D9004059B6 /* RecipeModel.swift */; };
 		CB64DDBD258A8653004059B6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB64DDBC258A8643004059B6 /* libsqlite3.0.tbd */; };
-		CB64DDC0258A888A004059B6 /* LocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDBF258A888A004059B6 /* LocalModel.swift */; };
+		CB64DDC0258A888A004059B6 /* ModelSql.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDBF258A888A004059B6 /* ModelSql.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		65F993D0162698BC4303B563 /* Pods_Dulce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dulce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FDAFFDFC96E322C8F5E63F6 /* Pods-Dulce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dulce.release.xcconfig"; path = "Target Support Files/Pods-Dulce/Pods-Dulce.release.xcconfig"; sourceTree = "<group>"; };
+		8483E4F5258CAD7200A228E9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		8483E4F7258CAEA600A228E9 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		8483E4F9258CAFA600A228E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8483E4FC258CB14000A228E9 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		8483E4FE258CB14B00A228E9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		8486BF5A25837F5800ECEE7D /* Dulce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dulce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8486BF5D25837F5800ECEE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8486BF5F25837F5800ECEE7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +60,7 @@
 		CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		CB64DDBA258A82D9004059B6 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		CB64DDBC258A8643004059B6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		CB64DDBF258A888A004059B6 /* LocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalModel.swift; sourceTree = "<group>"; };
+		CB64DDBF258A888A004059B6 /* ModelSql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSql.swift; sourceTree = "<group>"; };
 		DD517D100FA7481611C393D0 /* Pods-Dulce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dulce.debug.xcconfig"; path = "Target Support Files/Pods-Dulce/Pods-Dulce.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,6 +86,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		8483E4F4258CAD5300A228E9 /* Enteties */ = {
+			isa = PBXGroup;
+			children = (
+				8483E4F5258CAD7200A228E9 /* Category.swift */,
+				8483E4F7258CAEA600A228E9 /* Recipe.swift */,
+				8483E4F9258CAFA600A228E9 /* User.swift */,
+			);
+			path = Enteties;
+			sourceTree = "<group>";
+		};
+		8483E4FB258CB12600A228E9 /* EntetiesModel */ = {
+			isa = PBXGroup;
+			children = (
+				CB64DDBA258A82D9004059B6 /* RecipeModel.swift */,
+				8483E4FC258CB14000A228E9 /* CategoryModel.swift */,
+				8483E4FE258CB14B00A228E9 /* UserModel.swift */,
+			);
+			path = EntetiesModel;
+			sourceTree = "<group>";
+		};
 		8486BF5125837F5800ECEE7D = {
 			isa = PBXGroup;
 			children = (
@@ -97,7 +127,6 @@
 		8486BF5C25837F5800ECEE7D /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				CB64DDB9258A8235004059B6 /* Enteties */,
 				CB64DDB6258A70A1004059B6 /* Model */,
 				8486F56225890DCD00469BCB /* GoogleService-Info.plist */,
 				8486BF842583A27400ECEE7D /* CustomElements */,
@@ -137,18 +166,12 @@
 		CB64DDB6258A70A1004059B6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8483E4FB258CB12600A228E9 /* EntetiesModel */,
+				8483E4F4258CAD5300A228E9 /* Enteties */,
 				CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */,
-				CB64DDBA258A82D9004059B6 /* RecipeModel.swift */,
-				CB64DDBF258A888A004059B6 /* LocalModel.swift */,
+				CB64DDBF258A888A004059B6 /* ModelSql.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		CB64DDB9258A8235004059B6 /* Enteties */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Enteties;
 			sourceTree = "<group>";
 		};
 		CC6D1A8D0CC78772877AAB2D /* Pods */ = {
@@ -298,15 +321,20 @@
 				8486BF7B2583A05300ECEE7D /* ProfileViewController.swift in Sources */,
 				8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */,
 				8486BF5E25837F5800ECEE7D /* AppDelegate.swift in Sources */,
+				8483E4FD258CB14000A228E9 /* CategoryModel.swift in Sources */,
+				8483E4FA258CAFA600A228E9 /* User.swift in Sources */,
 				8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */,
 				CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */,
-				CB64DDC0258A888A004059B6 /* LocalModel.swift in Sources */,
+				CB64DDC0258A888A004059B6 /* ModelSql.swift in Sources */,
 				8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */,
 				8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */,
+				8483E4F8258CAEA600A228E9 /* Recipe.swift in Sources */,
 				CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */,
 				8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */,
 				848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */,
 				8486BF6025837F5800ECEE7D /* SceneDelegate.swift in Sources */,
+				8483E4FF258CB14B00A228E9 /* UserModel.swift in Sources */,
+				8483E4F6258CAD7200A228E9 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,8 +25,16 @@ class FavoritesViewController: UIViewController {
     
 
     @IBAction func addToDb(_ sender: Any) {
-        Recipemodel.addRecipe()
+        RecipeModel.addRecipe()
     }
     
+    @IBAction func getUsers(_ sender: Any) {
+        UserModel.getAllStudents{ (_data:[User]?) in
+            if (_data != nil) {
+               // do somthing with the data
+            }
+        };
+
+}
     
 }

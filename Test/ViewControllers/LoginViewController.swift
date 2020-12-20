@@ -14,25 +14,10 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
         GIDSignIn.sharedInstance().presentingViewController = self
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
-    }
-    
-    @IBAction func Login(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
-        
-        // This is to get the SceneDelegate object from your view controller
-        // then call the change root view controller function to change to main tab bar
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
-        
-    }
-    
-    @IBAction func GoToRegeister(_ sender: Any) {
-        let nextViewController = storyboard?.instantiateViewController(withIdentifier: "Register") as! RegisterViewController
-        
-        show(nextViewController, sender: sender)
     }
 }
 
@@ -69,6 +54,12 @@ extension LoginViewController: GIDSignInDelegate {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+
+                let user = Auth.auth().currentUser!
+
+                // if the user isnt exists - add it
+                let newUser = User(Id: user.uid, name: user.displayName ?? "user", EMail: user.email ?? "", Picture: user.photoURL?.absoluteString)
+                UserModel.addUser(user: newUser.toJson())
                 
                 // This is to get the SceneDelegate object from your view controller
                 // then call the change root view controller function to change to main tab bar

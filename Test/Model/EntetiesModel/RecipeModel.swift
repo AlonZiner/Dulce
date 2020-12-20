@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import FirebaseDatabase
 
-class Recipemodel {
+class RecipeModel {
     static let model = ModelFirebase.model.ref.child("recipes")
     
     private init(){}
