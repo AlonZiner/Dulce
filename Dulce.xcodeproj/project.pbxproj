@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		847DA37125927BED00F39ED1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DA37025927BED00F39ED1 /* Logger.swift */; };
 		8483E4F6258CAD7200A228E9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F5258CAD7200A228E9 /* Category.swift */; };
 		8483E4F8258CAEA600A228E9 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F7258CAEA600A228E9 /* Recipe.swift */; };
 		8483E4FA258CAFA600A228E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F9258CAFA600A228E9 /* User.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		65F993D0162698BC4303B563 /* Pods_Dulce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dulce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FDAFFDFC96E322C8F5E63F6 /* Pods-Dulce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dulce.release.xcconfig"; path = "Target Support Files/Pods-Dulce/Pods-Dulce.release.xcconfig"; sourceTree = "<group>"; };
+		847DA37025927BED00F39ED1 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		8483E4F5258CAD7200A228E9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		8483E4F7258CAEA600A228E9 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		8483E4F9258CAFA600A228E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		847DA36F25927BC200F39ED1 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				847DA37025927BED00F39ED1 /* Logger.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		8483E4F4258CAD5300A228E9 /* Enteties */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +137,7 @@
 		8486BF5C25837F5800ECEE7D /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				847DA36F25927BC200F39ED1 /* Utilities */,
 				CB64DDB6258A70A1004059B6 /* Model */,
 				8486F56225890DCD00469BCB /* GoogleService-Info.plist */,
 				8486BF842583A27400ECEE7D /* CustomElements */,
@@ -317,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847DA37125927BED00F39ED1 /* Logger.swift in Sources */,
 				8486BF7F2583A11400ECEE7D /* FriendsViewController.swift in Sources */,
 				8486BF7B2583A05300ECEE7D /* ProfileViewController.swift in Sources */,
 				8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */,

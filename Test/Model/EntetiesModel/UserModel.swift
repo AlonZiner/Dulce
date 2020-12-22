@@ -38,12 +38,6 @@ class UserModel {
                 
                 callback(data)
             }
-            
-//            for document in snapshot.children {
-//                data.append(User(json: document as! [String : Any]))
-//            }
-//
-//            callback(data)
         })
     }
 }
