@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		847DA37125927BED00F39ED1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DA37025927BED00F39ED1 /* Logger.swift */; };
+		847DA37425927F8500F39ED1 /* ObjectiveCFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DA37325927F8500F39ED1 /* ObjectiveCFile.m */; };
+		847DA3792592836400F39ED1 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DA3782592836400F39ED1 /* DataController.swift */; };
+		847DA37C259283BF00F39ED1 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 847DA37A259283BF00F39ED1 /* DataModel.xcdatamodeld */; };
 		8483E4F6258CAD7200A228E9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F5258CAD7200A228E9 /* Category.swift */; };
 		8483E4F8258CAEA600A228E9 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F7258CAEA600A228E9 /* Recipe.swift */; };
 		8483E4FA258CAFA600A228E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F9258CAFA600A228E9 /* User.swift */; };
@@ -38,6 +41,10 @@
 		65F993D0162698BC4303B563 /* Pods_Dulce.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dulce.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FDAFFDFC96E322C8F5E63F6 /* Pods-Dulce.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dulce.release.xcconfig"; path = "Target Support Files/Pods-Dulce/Pods-Dulce.release.xcconfig"; sourceTree = "<group>"; };
 		847DA37025927BED00F39ED1 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		847DA37225927F8400F39ED1 /* Dulce-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dulce-Bridging-Header.h"; sourceTree = "<group>"; };
+		847DA37325927F8500F39ED1 /* ObjectiveCFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectiveCFile.m; sourceTree = "<group>"; };
+		847DA3782592836400F39ED1 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		847DA37B259283BF00F39ED1 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		8483E4F5258CAD7200A228E9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		8483E4F7258CAEA600A228E9 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		8483E4F9258CAFA600A228E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -92,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				847DA37025927BED00F39ED1 /* Logger.swift */,
+				847DA37325927F8500F39ED1 /* ObjectiveCFile.m */,
+				847DA37225927F8400F39ED1 /* Dulce-Bridging-Header.h */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -181,6 +190,8 @@
 				8483E4F4258CAD5300A228E9 /* Enteties */,
 				CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */,
 				CB64DDBF258A888A004059B6 /* ModelSql.swift */,
+				847DA3782592836400F39ED1 /* DataController.swift */,
+				847DA37A259283BF00F39ED1 /* DataModel.xcdatamodeld */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +240,7 @@
 				TargetAttributes = {
 					8486BF5925837F5800ECEE7D = {
 						CreatedOnToolsVersion = 11.2;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -333,11 +345,13 @@
 				8486BF7B2583A05300ECEE7D /* ProfileViewController.swift in Sources */,
 				8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */,
 				8486BF5E25837F5800ECEE7D /* AppDelegate.swift in Sources */,
+				847DA3792592836400F39ED1 /* DataController.swift in Sources */,
 				8483E4FD258CB14000A228E9 /* CategoryModel.swift in Sources */,
 				8483E4FA258CAFA600A228E9 /* User.swift in Sources */,
 				8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */,
 				CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */,
 				CB64DDC0258A888A004059B6 /* ModelSql.swift in Sources */,
+				847DA37C259283BF00F39ED1 /* DataModel.xcdatamodeld in Sources */,
 				8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */,
 				8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */,
 				8483E4F8258CAEA600A228E9 /* Recipe.swift in Sources */,
@@ -345,6 +359,7 @@
 				8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */,
 				848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */,
 				8486BF6025837F5800ECEE7D /* SceneDelegate.swift in Sources */,
+				847DA37425927F8500F39ED1 /* ObjectiveCFile.m in Sources */,
 				8483E4FF258CB14B00A228E9 /* UserModel.swift in Sources */,
 				8483E4F6258CAD7200A228E9 /* Category.swift in Sources */,
 			);
@@ -491,6 +506,7 @@
 			baseConfigurationReference = DD517D100FA7481611C393D0 /* Pods-Dulce.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -499,7 +515,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Dulce.Test;
 				PRODUCT_NAME = Dulce;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Test/Utilities/Dulce-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -510,6 +527,7 @@
 			baseConfigurationReference = 7FDAFFDFC96E322C8F5E63F6 /* Pods-Dulce.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -518,7 +536,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Dulce.Test;
 				PRODUCT_NAME = Dulce;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Test/Utilities/Dulce-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -546,6 +564,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		847DA37A259283BF00F39ED1 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				847DA37B259283BF00F39ED1 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 847DA37B259283BF00F39ED1 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8486BF5225837F5800ECEE7D /* Project object */;
 }

@@ -12,9 +12,28 @@ import GoogleSignIn
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var userName: UILabel!
+    
+    @IBOutlet weak var userEmail: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        // TODO: try get user profile picture, if not exists show default picture
+        
+        //profileImage.image = UIImage(named: "cake")
+        
+        if let user = Auth.auth().currentUser {
+            userName.text = user.displayName ?? "Profile"
+            userEmail.text = user.email ?? ""
+            
+            let url = URL(string: user.photoURL!.absoluteString)
+            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+            profileImage.image = UIImage(data: data!)
+        }
+        
+        
     }
     
     @IBAction func LogOut(_ sender: Any) {
@@ -36,15 +55,4 @@ class ProfileViewController: UIViewController {
             print ("Error signing out from Firebase: %@", error)
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

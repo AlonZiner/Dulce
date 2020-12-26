@@ -61,6 +61,7 @@ extension LoginViewController: GIDSignInDelegate {
                 let newUser = User(Id: user.uid, name: user.displayName ?? "user", EMail: user.email ?? "", Picture: user.photoURL?.absoluteString)
                 UserModel.addUser(user: newUser.toJson())
                 
+                
                 // This is to get the SceneDelegate object from your view controller
                 // then call the change root view controller function to change to main tab bar
                 (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
