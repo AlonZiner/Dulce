@@ -11,19 +11,18 @@ import UIKit
 class CategoriesTableTableViewController: UITableViewController {
     
     @IBOutlet var categoriesTableView: UITableView!
-    let categories = [
-        RecipeCategory(id: "at", name: "Cookies"),
-        RecipeCategory(id: "be", name: "Breads"),
-        RecipeCategory(id: "de", name: "Sugarless"),
-        RecipeCategory(id: "el", name: "Gluten Free"),
-        RecipeCategory(id: "fr", name: "Cakes"),
-    ]
+    var categories: [Category] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        CategoryModel.getAllCategories{ (_data:[Category]?) in
+            if (_data != nil) {
+                self.categories = _data ?? [Category]()
+                self.tableView.reloadData()
+            }
+        }
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -44,7 +43,7 @@ class CategoriesTableTableViewController: UITableViewController {
         let resultViewController = storyBoard.instantiateViewController(withIdentifier: "RecipeViewController") as! RecipeViewController
         
         // setting new vc parameters
-        resultViewController.recipeName = indexPath.row.description + " " + categories[indexPath.row].name
+        resultViewController.recipeName = indexPath.row.description + " " + (categories[indexPath.row].Name ?? "")
         
         // pushing the new vc
         self.navigationController?.pushViewController(resultViewController, animated: true)
@@ -53,9 +52,8 @@ class CategoriesTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
 
-        // Configure the cell...
         let category = categories[indexPath.row]
-        cell.textLabel?.text = category.name
+        cell.textLabel?.text = category.Name
         cell.detailTextLabel?.text = "very tasty!!"
         cell.imageView?.image = UIImage(named: "cake")
 
