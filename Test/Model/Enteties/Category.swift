@@ -10,10 +10,22 @@ import Foundation
 
 class Category {
     var Id: String;
-    var Name: String;
+    var Name: String?;
     
-    init(id: String, name: String) {
-        Id = id
+    init(name: String) {
+        Id = UUID().uuidString
         Name = name
+    }
+    
+    init(json:[String:Any]){
+        Id = json["id"] as! String
+        Name = json["name"] as! String?
+    }
+    
+    func toJson() -> [String:String] {
+        var json = [String:String]();
+        json["id"] = Id
+        json["name"] = Name
+        return json;
     }
 }

@@ -21,12 +21,6 @@ class CategoriesTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-         //self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -45,11 +39,14 @@ class CategoriesTableTableViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         // navigation on cell clicking
        
+        // creating the new view controller
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let resultViewController = storyBoard.instantiateViewController(withIdentifier: "RecipeViewController") as! RecipeViewController
         
+        // setting new vc parameters
         resultViewController.recipeName = indexPath.row.description + " " + categories[indexPath.row].name
         
+        // pushing the new vc
         self.navigationController?.pushViewController(resultViewController, animated: true)
     }
     

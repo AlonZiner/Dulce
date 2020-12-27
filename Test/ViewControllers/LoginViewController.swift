@@ -58,7 +58,7 @@ extension LoginViewController: GIDSignInDelegate {
                 let user = Auth.auth().currentUser!
 
                 // if the user isnt exists - add it
-                let newUser = User(Id: user.uid, name: user.displayName ?? "user", EMail: user.email ?? "", Picture: user.photoURL?.absoluteString)
+                let newUser = User(Id: UUID().uuidString, name: user.displayName ?? "user", EMail: user.email ?? "", Picture: user.photoURL?.absoluteString)
                 UserModel.addUser(user: newUser.toJson())
                 
                 

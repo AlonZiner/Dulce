@@ -15,7 +15,30 @@ class CategoryModel {
     
     private init(){}
     
-    static func addCategory() -> () {
-        model.child("1").setValue("Category 1")
+    static func addCategory(category: [String:String]) -> () {
+        model.child(category["id"]!).setValue(category)
     }
+    
+    static func getAllCategories(callback: @escaping ([Category]?)->Void){
+        let ref = CategoryModel.model
+
+        ref.observe(.value, with:{ (snapshot: DataSnapshot) in
+            
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                var data = [Category]();
+                
+                for snap in snapshot {
+                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                        let category = Category(json: postDict)
+                        data.append(category)
+                    } else {
+                        print("failed to convert")
+                    }
+                }
+                
+                callback(data)
+            }
+        })
+    }
+    
 }

@@ -31,6 +31,8 @@
 		8486F56325890DCD00469BCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8486F56225890DCD00469BCB /* GoogleService-Info.plist */; };
 		848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */; };
 		84D0FA57259903A8001F0FF9 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */; };
+		84D0FA5925990B5F001F0FF9 /* CategoriesEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA5825990B5F001F0FF9 /* CategoriesEditViewController.swift */; };
+		84D0FA5B259914AE001F0FF9 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */; };
 		8E2355C97DD11AD5ACA700CB /* Pods_Dulce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F993D0162698BC4303B563 /* Pods_Dulce.framework */; };
 		CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */; };
 		CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDBA258A82D9004059B6 /* RecipeModel.swift */; };
@@ -68,6 +70,8 @@
 		8486F56225890DCD00469BCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableTableViewController.swift; sourceTree = "<group>"; };
 		84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
+		84D0FA5825990B5F001F0FF9 /* CategoriesEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesEditViewController.swift; sourceTree = "<group>"; };
+		84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		CB64DDBA258A82D9004059B6 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		CB64DDBC258A8643004059B6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -182,6 +186,8 @@
 			children = (
 				8486BF772583997B00ECEE7D /* CustomTabBarControllerViewController.swift */,
 				848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */,
+				84D0FA5825990B5F001F0FF9 /* CategoriesEditViewController.swift */,
+				84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */,
 			);
 			path = CustomElements;
 			sourceTree = "<group>";
@@ -354,11 +360,13 @@
 				8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */,
 				CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */,
 				CB64DDC0258A888A004059B6 /* ModelSql.swift in Sources */,
+				84D0FA5B259914AE001F0FF9 /* AddCategoryViewController.swift in Sources */,
 				847DA37C259283BF00F39ED1 /* DataModel.xcdatamodeld in Sources */,
 				8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */,
 				8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */,
 				8483E4F8258CAEA600A228E9 /* Recipe.swift in Sources */,
 				CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */,
+				84D0FA5925990B5F001F0FF9 /* CategoriesEditViewController.swift in Sources */,
 				8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */,
 				848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */,
 				84D0FA57259903A8001F0FF9 /* RecipeViewController.swift in Sources */,
