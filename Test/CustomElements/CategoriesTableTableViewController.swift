@@ -44,7 +44,13 @@ class CategoriesTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         // navigation on cell clicking
-        self.navigationController?.pushViewController(ChatViewController(), animated: true)
+       
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "RecipeViewController") as! RecipeViewController
+        
+        resultViewController.recipeName = indexPath.row.description + " " + categories[indexPath.row].name
+        
+        self.navigationController?.pushViewController(resultViewController, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

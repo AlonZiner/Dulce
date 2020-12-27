@@ -174,7 +174,7 @@
         <!--Recipe-->
         <scene sceneID="SnI-L0-TCe">
             <objects>
-                <viewController id="4rK-dI-NAE" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeViewController" id="4rK-dI-NAE" customClass="RecipeViewController" customModule="Dulce" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7RR-PX-Jm3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
