@@ -40,10 +40,10 @@ class CategoriesTableTableViewController: UITableViewController {
        
         // creating the new view controller
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "RecipeViewController") as! RecipeViewController
+        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "CategoryTableViewController") as! CategoryTableViewController
         
         // setting new vc parameters
-        resultViewController.recipeName = indexPath.row.description + " " + (categories[indexPath.row].Name ?? "")
+        resultViewController.categoryName = indexPath.row.description + " " + (categories[indexPath.row].Name ?? "")
         
         // pushing the new vc
         self.navigationController?.pushViewController(resultViewController, animated: true)

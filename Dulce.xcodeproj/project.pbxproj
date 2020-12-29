@@ -16,6 +16,7 @@
 		8483E4FA258CAFA600A228E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F9258CAFA600A228E9 /* User.swift */; };
 		8483E4FD258CB14000A228E9 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4FC258CB14000A228E9 /* CategoryModel.swift */; };
 		8483E4FF258CB14B00A228E9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4FE258CB14B00A228E9 /* UserModel.swift */; };
+		84861EDF259BB9140029A1D8 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84861EDE259BB9140029A1D8 /* CategoryTableViewController.swift */; };
 		8486BF5E25837F5800ECEE7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF5D25837F5800ECEE7D /* AppDelegate.swift */; };
 		8486BF6025837F5800ECEE7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF5F25837F5800ECEE7D /* SceneDelegate.swift */; };
 		8486BF6725837F5800ECEE7D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486BF6525837F5800ECEE7D /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		8483E4F9258CAFA600A228E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8483E4FC258CB14000A228E9 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		8483E4FE258CB14B00A228E9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		84861EDE259BB9140029A1D8 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
 		8486BF5A25837F5800ECEE7D /* Dulce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dulce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8486BF5D25837F5800ECEE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8486BF5F25837F5800ECEE7D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				8486BF802583A11F00ECEE7D /* ChatViewController.swift */,
 				8486BF822583A13400ECEE7D /* FavoritesViewController.swift */,
 				84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */,
+				84861EDE259BB9140029A1D8 /* CategoryTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				847DA37425927F8500F39ED1 /* ObjectiveCFile.m in Sources */,
 				8483E4FF258CB14B00A228E9 /* UserModel.swift in Sources */,
 				8483E4F6258CAD7200A228E9 /* Category.swift in Sources */,
+				84861EDF259BB9140029A1D8 /* CategoryTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
