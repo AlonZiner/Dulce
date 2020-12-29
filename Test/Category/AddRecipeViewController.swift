@@ -24,8 +24,10 @@ class AddRecipeViewController: UIViewController {
     }
     
     @IBAction func AddRecipe(_ sender: Any) {
-        // add recipe
+        let recipe = Recipe(Title: recipeName.text ?? "no title", Difficulty: 1, TimeToMake: 15, Publisher: "UserIdHere", Instructions: RecipeInstructions.text ?? "no instructions")
         
+        RecipeModel.addRecipe(recipe: recipe.toJson())
+
         dismiss(animated: true, completion: nil)
     }
 }

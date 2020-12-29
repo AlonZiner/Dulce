@@ -59,10 +59,4 @@ class CategoriesTableTableViewController: UITableViewController {
 
         return cell
     }
-    
-    // TODO: move
-    struct RecipeCategory {
-        var id: String
-        var name: String
-    }
 }

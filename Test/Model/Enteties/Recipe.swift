@@ -17,12 +17,32 @@ class Recipe {
     var Instructions: String
     // comments array
     
-    init(Id: String, Title: String, Difficulty: Int, TimeToMake: Int, Publisher: String, Instructions: String) {
-        self.Id = Id
+    init(Title: String, Difficulty: Int, TimeToMake: Int, Publisher: String, Instructions: String) {
+        self.Id = UUID().uuidString
         self.Title = Title
         self.Difficulty = Difficulty
         self.TimeToMake = TimeToMake
         self.Publisher = Publisher
         self.Instructions = Instructions
+    }
+    
+    init(json:[String:Any]){
+        Id = json["id"] as! String
+        Title = json["title"] as! String
+        Difficulty = Int(json["difficulty"] as! String) ?? 0
+        TimeToMake = Int(json["timeToMake"] as! String) ?? 0
+        Publisher = json["publisher"] as! String
+        Instructions = json["instructions"] as! String
+    }
+    
+    func toJson() -> [String:String] {
+        var json = [String:String]();
+        json["id"] = Id
+        json["title"] = Title
+        json["difficulty"] = Difficulty.description
+        json["timeToMake"] = TimeToMake.description
+        json["publisher"] = Publisher
+        json["instructions"] = Instructions
+        return json;
     }
 }

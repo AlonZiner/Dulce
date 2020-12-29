@@ -168,10 +168,10 @@
 		8486BF5C25837F5800ECEE7D /* Test */ = {
 			isa = PBXGroup;
 			children = (
-				84861EE0259BBD380029A1D8 /* Category */,
 				847DA36F25927BC200F39ED1 /* Utilities */,
 				CB64DDB6258A70A1004059B6 /* Model */,
 				8486F56225890DCD00469BCB /* GoogleService-Info.plist */,
+				84861EE0259BBD380029A1D8 /* Category */,
 				8486BF842583A27400ECEE7D /* Categories */,
 				8486BF792583A02D00ECEE7D /* ViewControllers */,
 				8486BF5D25837F5800ECEE7D /* AppDelegate.swift */,
