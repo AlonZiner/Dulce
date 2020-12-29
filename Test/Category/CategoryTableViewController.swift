@@ -23,9 +23,6 @@ class CategoryTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    @IBAction func addRecipe(_ sender: Any) {
-    
-    }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
