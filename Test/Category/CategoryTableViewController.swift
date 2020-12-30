@@ -46,7 +46,7 @@ class CategoryTableViewController: UITableViewController {
         let resultViewController = storyBoard.instantiateViewController(withIdentifier: "RecipeViewController") as! RecipeViewController
         
         // setting new vc parameters
-        resultViewController.recipeName = indexPath.row.description + " " + (recipes[indexPath.row].Title ?? "")
+        resultViewController.recipe = recipes[indexPath.row]
         
         // pushing the new vc
         self.navigationController?.pushViewController(resultViewController, animated: true)

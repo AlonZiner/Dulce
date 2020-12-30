@@ -22,28 +22,4 @@ class FavoritesViewController: UIViewController {
             userName.text = user.displayName ?? ""
         }
     }
-    
-    
-    @IBAction func addToDb(_ sender: Any) {
-        
-    }
-    
-    @IBAction func getUsers(_ sender: Any) {
-        UserModel.getAllStudents{ (_data:[User]?) in
-            if (_data != nil) {
-                // do somthing with the data
-            }
-        };
-    }
-    
-    @IBAction func AddUserSql(_ sender: Any) {
-        let model = ModelSql()
-        //model.AddUser()
-    }
-    
-    @IBAction func GetUserSql(_ sender: Any) {
-        let model = ModelSql()
-        let users = model.GetAllUsers()
-        
-    }
 }
