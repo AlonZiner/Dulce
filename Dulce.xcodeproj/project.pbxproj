@@ -33,6 +33,7 @@
 		8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF822583A13400ECEE7D /* FavoritesViewController.swift */; };
 		8486F56325890DCD00469BCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8486F56225890DCD00469BCB /* GoogleService-Info.plist */; };
 		848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */; };
+		849A7FF3259CF1BF0064239F /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */; };
 		84D0FA57259903A8001F0FF9 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */; };
 		84D0FA5925990B5F001F0FF9 /* CategoriesEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA5825990B5F001F0FF9 /* CategoriesEditViewController.swift */; };
 		84D0FA5B259914AE001F0FF9 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */; };
@@ -75,6 +76,7 @@
 		8486BF822583A13400ECEE7D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8486F56225890DCD00469BCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableTableViewController.swift; sourceTree = "<group>"; };
+		849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		84D0FA5825990B5F001F0FF9 /* CategoriesEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesEditViewController.swift; sourceTree = "<group>"; };
 		84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				8486BF802583A11F00ECEE7D /* ChatViewController.swift */,
 				8486BF822583A13400ECEE7D /* FavoritesViewController.swift */,
 				84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */,
+				849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				8486BF6025837F5800ECEE7D /* SceneDelegate.swift in Sources */,
 				847DA37425927F8500F39ED1 /* ObjectiveCFile.m in Sources */,
 				8483E4FF258CB14B00A228E9 /* UserModel.swift in Sources */,
+				849A7FF3259CF1BF0064239F /* HomeNavigationController.swift in Sources */,
 				8483E4F6258CAD7200A228E9 /* Category.swift in Sources */,
 				84861EDF259BB9140029A1D8 /* CategoryTableViewController.swift in Sources */,
 			);
