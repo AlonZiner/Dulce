@@ -253,6 +253,8 @@
 			dependencies = (
 			);
 			name = Dulce;
+			packageProductDependencies = (
+			);
 			productName = Test;
 			productReference = 8486BF5A25837F5800ECEE7D /* Dulce.app */;
 			productType = "com.apple.product-type.application";
@@ -282,6 +284,8 @@
 				Base,
 			);
 			mainGroup = 8486BF5125837F5800ECEE7D;
+			packageReferences = (
+			);
 			productRefGroup = 8486BF5B25837F5800ECEE7D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

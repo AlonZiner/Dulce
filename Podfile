@@ -11,5 +11,6 @@ target 'Dulce' do
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'GoogleSignIn'
-  
+  pod 'Kingfisher', '~> 5.0'
+
 end

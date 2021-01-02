@@ -16,16 +16,24 @@ class CategoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.refreshControl = UIRefreshControl();
+            
+        self.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+        self.refreshControl?.beginRefreshing()
+        
+        reloadData()
+    }
+
+    @objc func reloadData(){
         RecipeModel.getAllRecipes { (_data:[Recipe]?) in
             if (_data != nil) {
                 self.recipes = _data ?? [Recipe]()
                 self.tableView.reloadData()
             }
+            
+            self.refreshControl?.endRefreshing()
         }
     }
-
-    // MARK: - Table view data source
-
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections

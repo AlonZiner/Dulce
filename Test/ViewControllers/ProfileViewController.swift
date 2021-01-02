@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import Kingfisher
 
 class ProfileViewController: UIViewController {
 
@@ -29,11 +30,8 @@ class ProfileViewController: UIViewController {
             userEmail.text = user.email ?? ""
             
             let url = URL(string: user.photoURL!.absoluteString)
-            let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-            profileImage.image = UIImage(data: data!)
+            profileImage.kf.setImage(with: url)
         }
-        
-        
     }
     
     @IBAction func LogOut(_ sender: Any) {

@@ -12,33 +12,27 @@ class CategoriesTableTableViewController: UITableViewController {
     
     @IBOutlet var categoriesTableView: UITableView!
     var categories: [Category] = []
-    var indicator = UIActivityIndicatorView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.refreshControl = UIRefreshControl();
+            
+        self.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
+        self.refreshControl?.beginRefreshing()
         
-        // start indeicator
-        activityIndicator()
-        indicator.startAnimating()
-        indicator.backgroundColor = .white
-        
+        reloadData()
+    }
+    
+    @objc func reloadData(){
         CategoryModel.getAllCategories{ (_data:[Category]?) in
             if (_data != nil) {
-                // stop indicator
-                self.indicator.stopAnimating()
-                self.indicator.hidesWhenStopped = true
                 
                 self.categories = _data ?? [Category]()
                 self.tableView.reloadData()
             }
+            
+            self.refreshControl?.endRefreshing()
         }
-    }
-    
-    func activityIndicator() {
-        indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 180, height: 180))
-        indicator.style = UIActivityIndicatorView.Style.large
-        indicator.center = self.view.center
-        self.view.addSubview(indicator)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
