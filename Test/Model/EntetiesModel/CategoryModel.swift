@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 
 class CategoryModel {
-    static let model = ModelFirebase.model.ref.child("categories")
+    static let model = ModelFirebase.instance.ref.child("categories")
     
     private init(){}
     

@@ -22,4 +22,16 @@ class FavoritesViewController: UIViewController {
             userName.text = user.displayName ?? ""
         }
     }
+    
+    @IBAction func getRecipe(_ sender: Any) {
+        let model = RecipeModel()
+
+        model.getAllRecipesSql{ (_data:[Recipe]?) in
+            
+            if (_data != nil) {
+
+            }
+            
+        }
+    }
 }

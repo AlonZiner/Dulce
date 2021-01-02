@@ -26,7 +26,9 @@ class AddRecipeViewController: UIViewController {
     @IBAction func AddRecipe(_ sender: Any) {
         let recipe = Recipe(Title: recipeName.text ?? "no title", Difficulty: 1, TimeToMake: 15, Publisher: "UserIdHere", Instructions: RecipeInstructions.text ?? "no instructions")
         
-        RecipeModel.addRecipe(recipe: recipe.toJson())
+        // TODO: create static model taht calls recipe model
+        let model = RecipeModel()
+        model.addRecipe(recipe: recipe)
 
         dismiss(animated: true, completion: nil)
     }

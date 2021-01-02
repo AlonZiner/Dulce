@@ -11,33 +11,44 @@ import Firebase
 import FirebaseDatabase
 
 class RecipeModel {
-    static let model = ModelFirebase.model.ref.child("recipes")
+    let modelFirebase = ModelFirebase.instance
+    let modelSql = ModelSql2()
     
-    private init(){}
-    
-    static func addRecipe(recipe: [String:String]) -> () {
-        model.child(recipe["id"]!).setValue(recipe)
+    init(){
+        modelSql.connect()
     }
     
-    static func getAllRecipes(callback: @escaping ([Recipe]?)->Void){
-        let ref = RecipeModel.model
-
-        ref.observe(.value, with:{ (snapshot: DataSnapshot) in
-            
-            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-                var data = [Recipe]();
+    func addRecipe(recipe: Recipe) -> () {
+        let json = recipe.toJson()
+        modelFirebase.ref.child("recipes").child(json["id"]! as! String).setValue(json)
+        
+        //modelSql.add(recipe: recipe)
+    }
+    
+    func getAllRecipesSql(callback: @escaping ([Recipe]?)->Void){
+        //get the local last update date
+        let lud = modelSql.getLastUpdateDate(name: "RECIPES");
+        
+        //get the cloud updates since the local update date
+        modelFirebase.getAllRecipesFB(since:lud) { (data) in
+            //insert update to the local db
+            var lud:Int64 = 0;
+            for student in data!{
+                self.modelSql.add(recipe: student)
                 
-                for snap in snapshot {
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let recipe = Recipe(json: postDict)
-                        data.append(recipe)
-                    } else {
-                        print("failed to convert")
-                    }
+                if student.lastUpdate != nil && student.lastUpdate! > lud {
+                    lud = student.lastUpdate!
                 }
-                
-                callback(data)
             }
-        })
+            
+            //update the students local last update date
+            self.modelSql.setLastUpdate(name: "RECIPES", lastUpdated: lud)
+            // get the complete student list
+            let finalData = self.modelSql.getAllRecipes()
+            callback(finalData);
+        }
+        
+        
+        callback(modelSql.getAllRecipes())
     }
 }

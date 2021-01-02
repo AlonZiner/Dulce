@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 
 class UserModel {
-    static let model = ModelFirebase.model.ref.child("users")
+    static let model = ModelFirebase.instance.ref.child("users")
     static let modelSql = ModelSql.init()
     
     private init(){}

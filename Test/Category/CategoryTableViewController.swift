@@ -25,14 +25,24 @@ class CategoryTableViewController: UITableViewController {
     }
 
     @objc func reloadData(){
-        RecipeModel.getAllRecipes { (_data:[Recipe]?) in
+        let model = RecipeModel()
+        model.getAllRecipesSql{ (_data:[Recipe]?) in
             if (_data != nil) {
                 self.recipes = _data ?? [Recipe]()
                 self.tableView.reloadData()
             }
-            
             self.refreshControl?.endRefreshing()
+
         }
+        
+//        model.getAllRecipes { (_data:[Recipe]?) in
+//            if (_data != nil) {
+//                self.recipes = _data ?? [Recipe]()
+//                self.tableView.reloadData()
+//            }
+//
+//            self.refreshControl?.endRefreshing()
+//        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
