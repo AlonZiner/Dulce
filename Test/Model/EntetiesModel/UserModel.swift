@@ -12,13 +12,11 @@ import FirebaseDatabase
 
 class UserModel {
     static let model = ModelFirebase.instance.ref.child("users")
-    static let modelSql = ModelSql.init()
     
     private init(){}
     
     static func addUser(user: [String:String]) -> () {
         model.child(user["id"]!).setValue(user)
-        modelSql.AddUser(user: User(json: user))
     }
     
     static func getAllStudents(callback: @escaping ([User]?)->Void){

@@ -24,7 +24,8 @@ class CategoriesTableTableViewController: UITableViewController {
     }
     
     @objc func reloadData(){
-        CategoryModel.getAllCategories{ (_data:[Category]?) in
+        let model = CategoryModel()
+        model.getAllCategories { (_data:[Category]?) in
             if (_data != nil) {
                 
                 self.categories = _data ?? [Category]()

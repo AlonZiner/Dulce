@@ -21,8 +21,6 @@ class RecipeModel {
     func addRecipe(recipe: Recipe) -> () {
         let json = recipe.toJson()
         modelFirebase.ref.child("recipes").child(json["id"]! as! String).setValue(json)
-        
-        //modelSql.add(recipe: recipe)
     }
     
     func getAllRecipesSql(callback: @escaping ([Recipe]?)->Void){
@@ -33,11 +31,11 @@ class RecipeModel {
         modelFirebase.getAllRecipesFB(since:lud) { (data) in
             //insert update to the local db
             var lud:Int64 = 0;
-            for student in data!{
-                self.modelSql.add(recipe: student)
+            for recipe in data!{
+                self.modelSql.addRecipe(recipe: recipe)
                 
-                if student.lastUpdate != nil && student.lastUpdate! > lud {
-                    lud = student.lastUpdate!
+                if recipe.lastUpdate != nil && recipe.lastUpdate! > lud {
+                    lud = recipe.lastUpdate!
                 }
             }
             
@@ -47,8 +45,5 @@ class RecipeModel {
             let finalData = self.modelSql.getAllRecipes()
             callback(finalData);
         }
-        
-        
-        callback(modelSql.getAllRecipes())
     }
 }

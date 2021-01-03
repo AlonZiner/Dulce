@@ -23,6 +23,7 @@ class ModelSql2{
         create()
     }
 
+    // MARK: CREATE TABLES
     func create(){
         var errormsg: UnsafeMutablePointer<Int8>? = nil
         //let res = sqlite3_exec(database, "DROP TABLE IF EXISTS RECIPES;", nil, nil, &errormsg);
@@ -33,14 +34,20 @@ class ModelSql2{
             return
         }
         
-        res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS LAST_UPADATE_DATE (NAME TEXT PRIMARY KEY, DATE DOUBLE)", nil, nil, &errormsg);
+        res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS CATEGORIES (ID TEXT PRIMARY KEY, NAME TEXT)", nil, nil, &errormsg);
         if(res != 0){
             print("error creating table");
             return
         }
         
+        res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS LAST_UPADATE_DATE (NAME TEXT PRIMARY KEY, DATE DOUBLE)", nil, nil, &errormsg);
+        if(res != 0){
+            print("error creating table");
+            return
+        }
     }
     
+    // MARK: LAST UPDATE DATE
     func setLastUpdate(name:String, lastUpdated:Int64){
         var sqlite3_stmt: OpaquePointer? = nil
         if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO LAST_UPADATE_DATE( NAME, DATE) VALUES (?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
@@ -53,6 +60,7 @@ class ModelSql2{
         }
         sqlite3_finalize(sqlite3_stmt)
     }
+    
     
     func getLastUpdateDate(name:String)->Int64{
         var date:Int64 = 0;
@@ -69,11 +77,8 @@ class ModelSql2{
         return date
     }
 
-    
-    
-    
-    // TODO: move to receipe sql
-    func add(recipe: Recipe){
+    // MARK: RECIPES
+    func addRecipe(recipe: Recipe){
         var sqlite3_stmt: OpaquePointer? = nil
         if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO RECIPES(ID, TITLE, DIFFICULTY, TIME_TO_MAKE, PUBLISHER, INSTRUCTIONS) VALUES (?,?,?,?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
             
@@ -116,6 +121,44 @@ class ModelSql2{
                 let recipe = Recipe(Id: id, Title: title, Difficulty: difficulty, TimeToMake: timeTomake, Publisher: publisher, Instructions: instructions)
                 
                 data.append(recipe)
+            }
+        }
+        
+        sqlite3_finalize(sqlite3_stmt)
+        return data
+    }
+    
+    // MARK: CATEGORIES
+    func addCategory(category: Category){
+        var sqlite3_stmt: OpaquePointer? = nil
+        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO CATEGORIES(ID, NAME) VALUES (?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+            
+            let id = category.Id.cString(using: .utf8)
+            let name = category.Name?.cString(using: .utf8)
+            
+            sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
+            sqlite3_bind_text(sqlite3_stmt, 2, name,-1,nil);
+            
+            
+            if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
+                print("new row added succefully")
+            }
+        }
+    }
+    
+    func getAllCategories()->[Category]{
+        var sqlite3_stmt: OpaquePointer? = nil
+        var data = [Category]()
+        
+        if (sqlite3_prepare_v2(database,"SELECT * from CATEGORIES;",-1,&sqlite3_stmt,nil)
+            == SQLITE_OK){
+            while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
+
+                let id = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)
+                let name = String(cString:sqlite3_column_text(sqlite3_stmt,1)!)
+                
+                let category = Category(id: id, name: name)
+                data.append(category)
             }
         }
         

@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		847DA37125927BED00F39ED1 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DA37025927BED00F39ED1 /* Logger.swift */; };
 		847DA37425927F8500F39ED1 /* ObjectiveCFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 847DA37325927F8500F39ED1 /* ObjectiveCFile.m */; };
-		847DA3792592836400F39ED1 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DA3782592836400F39ED1 /* DataController.swift */; };
-		847DA37C259283BF00F39ED1 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 847DA37A259283BF00F39ED1 /* DataModel.xcdatamodeld */; };
 		8483E4F6258CAD7200A228E9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F5258CAD7200A228E9 /* Category.swift */; };
 		8483E4F8258CAEA600A228E9 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F7258CAEA600A228E9 /* Recipe.swift */; };
 		8483E4FA258CAFA600A228E9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4F9258CAFA600A228E9 /* User.swift */; };
@@ -35,7 +33,6 @@
 		848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */; };
 		8493F74925A0BEAC003CFA86 /* ModelSql2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493F74825A0BEAC003CFA86 /* ModelSql2.swift */; };
 		8493F74B25A0D925003CFA86 /* ModelFirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493F74A25A0D925003CFA86 /* ModelFirebaseStorage.swift */; };
-		8493F74D25A12012003CFA86 /* RecipeSql.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493F74C25A12012003CFA86 /* RecipeSql.swift */; };
 		849A7FF3259CF1BF0064239F /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */; };
 		84D0FA57259903A8001F0FF9 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */; };
 		84D0FA5925990B5F001F0FF9 /* CategoriesEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA5825990B5F001F0FF9 /* CategoriesEditViewController.swift */; };
@@ -44,7 +41,6 @@
 		CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */; };
 		CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDBA258A82D9004059B6 /* RecipeModel.swift */; };
 		CB64DDBD258A8653004059B6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB64DDBC258A8643004059B6 /* libsqlite3.0.tbd */; };
-		CB64DDC0258A888A004059B6 /* ModelSql.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDBF258A888A004059B6 /* ModelSql.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +49,6 @@
 		847DA37025927BED00F39ED1 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		847DA37225927F8400F39ED1 /* Dulce-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dulce-Bridging-Header.h"; sourceTree = "<group>"; };
 		847DA37325927F8500F39ED1 /* ObjectiveCFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjectiveCFile.m; sourceTree = "<group>"; };
-		847DA3782592836400F39ED1 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
-		847DA37B259283BF00F39ED1 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		8483E4F5258CAD7200A228E9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		8483E4F7258CAEA600A228E9 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		8483E4F9258CAFA600A228E9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -81,7 +75,6 @@
 		848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableTableViewController.swift; sourceTree = "<group>"; };
 		8493F74825A0BEAC003CFA86 /* ModelSql2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSql2.swift; sourceTree = "<group>"; };
 		8493F74A25A0D925003CFA86 /* ModelFirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebaseStorage.swift; sourceTree = "<group>"; };
-		8493F74C25A12012003CFA86 /* RecipeSql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSql.swift; sourceTree = "<group>"; };
 		849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		84D0FA5825990B5F001F0FF9 /* CategoriesEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesEditViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +82,6 @@
 		CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		CB64DDBA258A82D9004059B6 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		CB64DDBC258A8643004059B6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		CB64DDBF258A888A004059B6 /* ModelSql.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSql.swift; sourceTree = "<group>"; };
 		DD517D100FA7481611C393D0 /* Pods-Dulce.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dulce.debug.xcconfig"; path = "Target Support Files/Pods-Dulce/Pods-Dulce.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,7 +133,6 @@
 				CB64DDBA258A82D9004059B6 /* RecipeModel.swift */,
 				8483E4FC258CB14000A228E9 /* CategoryModel.swift */,
 				8483E4FE258CB14B00A228E9 /* UserModel.swift */,
-				8493F74C25A12012003CFA86 /* RecipeSql.swift */,
 			);
 			path = EntetiesModel;
 			sourceTree = "<group>";
@@ -225,9 +216,6 @@
 				8483E4FB258CB12600A228E9 /* EntetiesModel */,
 				8483E4F4258CAD5300A228E9 /* Enteties */,
 				CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */,
-				CB64DDBF258A888A004059B6 /* ModelSql.swift */,
-				847DA3782592836400F39ED1 /* DataController.swift */,
-				847DA37A259283BF00F39ED1 /* DataModel.xcdatamodeld */,
 				8493F74825A0BEAC003CFA86 /* ModelSql2.swift */,
 				8493F74A25A0D925003CFA86 /* ModelFirebaseStorage.swift */,
 			);
@@ -388,19 +376,15 @@
 				8486BF7B2583A05300ECEE7D /* ProfileViewController.swift in Sources */,
 				8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */,
 				8486BF5E25837F5800ECEE7D /* AppDelegate.swift in Sources */,
-				847DA3792592836400F39ED1 /* DataController.swift in Sources */,
 				8483E4FD258CB14000A228E9 /* CategoryModel.swift in Sources */,
 				8483E4FA258CAFA600A228E9 /* User.swift in Sources */,
 				84861EE4259BBE460029A1D8 /* AddRecipeViewController.swift in Sources */,
 				8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */,
 				CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */,
 				84861EE2259BBDA60029A1D8 /* CategoryEditViewController.swift in Sources */,
-				CB64DDC0258A888A004059B6 /* ModelSql.swift in Sources */,
 				84D0FA5B259914AE001F0FF9 /* AddCategoryViewController.swift in Sources */,
-				847DA37C259283BF00F39ED1 /* DataModel.xcdatamodeld in Sources */,
 				8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */,
 				8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */,
-				8493F74D25A12012003CFA86 /* RecipeSql.swift in Sources */,
 				8483E4F8258CAEA600A228E9 /* Recipe.swift in Sources */,
 				CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */,
 				84D0FA5925990B5F001F0FF9 /* CategoriesEditViewController.swift in Sources */,
@@ -616,19 +600,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		847DA37A259283BF00F39ED1 /* DataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				847DA37B259283BF00F39ED1 /* DataModel.xcdatamodel */,
-			);
-			currentVersion = 847DA37B259283BF00F39ED1 /* DataModel.xcdatamodel */;
-			path = DataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 8486BF5225837F5800ECEE7D /* Project object */;
 }

@@ -44,7 +44,7 @@ class Recipe {
         TimeToMake = Int(json["timeToMake"] as! String) ?? 0
         Publisher = json["publisher"] as! String
         Instructions = json["instructions"] as! String
-        lastUpdate = json["lastUpdate"] as! Int64
+        lastUpdate = json["lastUpdate"] as? Int64
     }
     
     func toJson() -> [String:Any] {

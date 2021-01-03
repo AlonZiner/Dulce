@@ -11,34 +11,40 @@ import Firebase
 import FirebaseDatabase
 
 class CategoryModel {
-    static let model = ModelFirebase.instance.ref.child("categories")
+    let modelFirebase = ModelFirebase.instance
+    let modelSql = ModelSql2()
     
-    private init(){}
-    
-    static func addCategory(category: [String:String]) -> () {
-        model.child(category["id"]!).setValue(category)
+    public init(){
+        modelSql.connect()
     }
     
-    static func getAllCategories(callback: @escaping ([Category]?)->Void){
-        let ref = CategoryModel.model
-
-        ref.observe(.value, with:{ (snapshot: DataSnapshot) in
-            
-            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-                var data = [Category]();
+    func addCategory(category: Category) -> () {
+        let json = category.toJson()
+        modelFirebase.ref.child("categories").child(json["id"] as! String).setValue(json)
+    }
+    
+    func getAllCategories(callback: @escaping ([Category]?)->Void){
+       //get the local last update date
+        let lud = modelSql.getLastUpdateDate(name: "CATEGORIES");
+        
+        //get the cloud updates since the local update date
+        modelFirebase.getAllCategoriesFB(since:lud) { (data) in
+            //insert update to the local db
+            var lud:Int64 = 0;
+            for category in data!{
+                self.modelSql.addCategory(category: category)
                 
-                for snap in snapshot {
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let category = Category(json: postDict)
-                        data.append(category)
-                    } else {
-                        print("failed to convert")
-                    }
+                if category.lastUpdate != nil && category.lastUpdate! > lud {
+                    lud = category.lastUpdate!
                 }
-                
-                callback(data)
             }
-        })
+            
+            //update the students local last update date
+            self.modelSql.setLastUpdate(name: "CATEGORIES", lastUpdated: lud)
+            // get the complete student list
+            let finalData = self.modelSql.getAllCategories()
+            callback(finalData);
+        }
     }
     
 }

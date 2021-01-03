@@ -24,8 +24,9 @@ class AddCategoryViewController: UIViewController {
     }
     
     @IBAction func Add(_ sender: Any) {
-        
-        CategoryModel.addCategory(category: Category(name: newCategoryName.text!).toJson())
+        let model = CategoryModel()
+
+        model.addCategory(category: Category(id: UUID().uuidString, name: newCategoryName.text!))
         
         dismiss(animated: true, completion: nil)
     }

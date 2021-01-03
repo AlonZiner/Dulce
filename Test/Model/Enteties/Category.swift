@@ -7,25 +7,30 @@
 //
 
 import Foundation
+import Firebase
 
 class Category {
     var Id: String;
     var Name: String?;
-    
-    init(name: String) {
-        Id = UUID().uuidString
+    var lastUpdate: Int64?
+
+    init(id: String, name: String) {
+        Id = id
         Name = name
     }
     
     init(json:[String:Any]){
         Id = json["id"] as! String
         Name = json["name"] as! String?
+        lastUpdate = json["lastUpdate"] as? Int64
     }
     
-    func toJson() -> [String:String] {
-        var json = [String:String]();
+    func toJson() -> [String:Any] {
+        var json = [String:Any]();
         json["id"] = Id
         json["name"] = Name
+        json["lastUpdate"] = ServerValue.timestamp()
+
         return json;
     }
 }
