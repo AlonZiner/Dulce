@@ -25,12 +25,12 @@ class RecipeModel {
     
     func getAllRecipesSql(callback: @escaping ([Recipe]?)->Void){
         //get the local last update date
-        let lud = modelSql.getLastUpdateDate(name: "RECIPES");
+        var lud = modelSql.getLastUpdateDate(name: "RECIPES");
+        let oldLud = lud
         
         //get the cloud updates since the local update date
         modelFirebase.getAllRecipesFB(since:lud) { (data) in
             //insert update to the local db
-            var lud:Int64 = 0;
             for recipe in data!{
                 self.modelSql.addRecipe(recipe: recipe)
                 
@@ -39,8 +39,11 @@ class RecipeModel {
                 }
             }
             
-            //update the students local last update date
-            self.modelSql.setLastUpdate(name: "RECIPES", lastUpdated: lud)
+            if (lud > oldLud){
+                //update the students local last update date
+                self.modelSql.setLastUpdate(name: "RECIPES", lastUpdated: lud)
+            }
+            
             // get the complete student list
             let finalData = self.modelSql.getAllRecipes()
             callback(finalData);

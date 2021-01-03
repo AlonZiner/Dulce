@@ -40,7 +40,7 @@ class ModelSql2{
             return
         }
         
-        res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS LAST_UPADATE_DATE (NAME TEXT PRIMARY KEY, DATE DOUBLE)", nil, nil, &errormsg);
+        res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS LAST_UPDATE_DATE (NAME TEXT PRIMARY KEY, DATE DOUBLE)", nil, nil, &errormsg);
         if(res != 0){
             print("error creating table");
             return
@@ -50,7 +50,7 @@ class ModelSql2{
     // MARK: LAST UPDATE DATE
     func setLastUpdate(name:String, lastUpdated:Int64){
         var sqlite3_stmt: OpaquePointer? = nil
-        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO LAST_UPADATE_DATE( NAME, DATE) VALUES (?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO LAST_UPDATE_DATE( NAME, DATE) VALUES (?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
 
             sqlite3_bind_text(sqlite3_stmt, 1, name,-1,nil);
             sqlite3_bind_int64(sqlite3_stmt, 2, lastUpdated);
@@ -65,8 +65,9 @@ class ModelSql2{
     func getLastUpdateDate(name:String)->Int64{
         var date:Int64 = 0;
         var sqlite3_stmt: OpaquePointer? = nil
-        if (sqlite3_prepare_v2(database,"SELECT * from LAST_UPADATE_DATE where NAME like ?;",-1,&sqlite3_stmt,nil)
+        if (sqlite3_prepare_v2(database,"SELECT * from LAST_UPDATE_DATE where NAME like ?;",-1,&sqlite3_stmt,nil)
             == SQLITE_OK){
+            
             sqlite3_bind_text(sqlite3_stmt, 1, name,-1,nil);
 
             if(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
@@ -98,7 +99,7 @@ class ModelSql2{
             
             
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-                print("new row added succefully")
+                print("recipe added succefully")
             }
         }
     }
@@ -141,7 +142,7 @@ class ModelSql2{
             
             
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
-                print("new row added succefully")
+                print("category added succefully")
             }
         }
     }
@@ -164,5 +165,28 @@ class ModelSql2{
         
         sqlite3_finalize(sqlite3_stmt)
         return data
+    }
+    
+    // MARK: DROP TABLES
+    func drop(){
+        var errormsg: UnsafeMutablePointer<Int8>? = nil
+        var res = sqlite3_exec(database, "DROP TABLE IF EXISTS RECIPES;", nil, nil, &errormsg);
+
+        if(res != 0){
+            print("error creating table");
+            return
+        }
+        
+        res = sqlite3_exec(database, "DROP TABLE IF EXISTS CATEGORIES;", nil, nil, &errormsg);
+        if(res != 0){
+            print("error creating table");
+            return
+        }
+        
+        res = sqlite3_exec(database, "DROP TABLE IF EXISTS LAST_UPDATE_DATE;", nil, nil, &errormsg);
+        if(res != 0){
+            print("error creating table");
+            return
+        }
     }
 }

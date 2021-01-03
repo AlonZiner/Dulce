@@ -25,12 +25,12 @@ class CategoryModel {
     
     func getAllCategories(callback: @escaping ([Category]?)->Void){
        //get the local last update date
-        let lud = modelSql.getLastUpdateDate(name: "CATEGORIES");
-        
+        var lud = modelSql.getLastUpdateDate(name: "CATEGORIES");
+        let oldLud = lud
+
         //get the cloud updates since the local update date
         modelFirebase.getAllCategoriesFB(since:lud) { (data) in
             //insert update to the local db
-            var lud:Int64 = 0;
             for category in data!{
                 self.modelSql.addCategory(category: category)
                 
@@ -39,8 +39,11 @@ class CategoryModel {
                 }
             }
             
-            //update the students local last update date
-            self.modelSql.setLastUpdate(name: "CATEGORIES", lastUpdated: lud)
+            if (lud > oldLud){
+                //update the students local last update date
+                self.modelSql.setLastUpdate(name: "CATEGORIES", lastUpdated: lud)
+            }
+            
             // get the complete student list
             let finalData = self.modelSql.getAllCategories()
             callback(finalData);
