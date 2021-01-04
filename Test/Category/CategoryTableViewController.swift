@@ -94,7 +94,8 @@ class CategoryTableViewController: UITableViewController {
     @objc func buttonTapped(sender : UIButton) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let resultViewController = storyBoard.instantiateViewController(withIdentifier: "AddRecipeViewController") as! AddRecipeViewController
-
+        
+        resultViewController.category = self.category
         resultViewController.modalPresentationStyle = .overCurrentContext
         present(resultViewController, animated: true, completion: nil)
     }

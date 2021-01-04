@@ -41,12 +41,13 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     var selectedImage:UIImage?;
+    var category: Category?
     
     func save() {
         let model = RecipeModel()
         let modelFB = ModelFirebase.instance
        
-        let recipe = Recipe(Title: recipeName.text ?? "no title", Difficulty: 1, TimeToMake: 15, Publisher: "UserIdHere", Instructions: RecipeInstructions.text ?? "no instructions", Picture: "", CategoryId: "categoryIdHere")
+        let recipe = Recipe(Title: recipeName.text ?? "no title", Difficulty: 1, TimeToMake: 15, Publisher: "UserIdHere", Instructions: RecipeInstructions.text ?? "no instructions", Picture: "", CategoryId: self.category?.Id ?? "")
 
         guard let selectedImage = selectedImage else {
             model.addRecipe(recipe: recipe)
