@@ -15,7 +15,6 @@
 		8483E4FD258CB14000A228E9 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4FC258CB14000A228E9 /* CategoryModel.swift */; };
 		8483E4FF258CB14B00A228E9 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8483E4FE258CB14B00A228E9 /* UserModel.swift */; };
 		84861EDF259BB9140029A1D8 /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84861EDE259BB9140029A1D8 /* CategoryTableViewController.swift */; };
-		84861EE2259BBDA60029A1D8 /* CategoryEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84861EE1259BBDA60029A1D8 /* CategoryEditViewController.swift */; };
 		84861EE4259BBE460029A1D8 /* AddRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84861EE3259BBE460029A1D8 /* AddRecipeViewController.swift */; };
 		8486BF5E25837F5800ECEE7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF5D25837F5800ECEE7D /* AppDelegate.swift */; };
 		8486BF6025837F5800ECEE7D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF5F25837F5800ECEE7D /* SceneDelegate.swift */; };
@@ -35,7 +34,6 @@
 		8493F74B25A0D925003CFA86 /* ModelFirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493F74A25A0D925003CFA86 /* ModelFirebaseStorage.swift */; };
 		849A7FF3259CF1BF0064239F /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */; };
 		84D0FA57259903A8001F0FF9 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */; };
-		84D0FA5925990B5F001F0FF9 /* CategoriesEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA5825990B5F001F0FF9 /* CategoriesEditViewController.swift */; };
 		84D0FA5B259914AE001F0FF9 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */; };
 		8E2355C97DD11AD5ACA700CB /* Pods_Dulce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F993D0162698BC4303B563 /* Pods_Dulce.framework */; };
 		CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */; };
@@ -55,7 +53,6 @@
 		8483E4FC258CB14000A228E9 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		8483E4FE258CB14B00A228E9 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		84861EDE259BB9140029A1D8 /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
-		84861EE1259BBDA60029A1D8 /* CategoryEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryEditViewController.swift; sourceTree = "<group>"; };
 		84861EE3259BBE460029A1D8 /* AddRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecipeViewController.swift; sourceTree = "<group>"; };
 		8486BF5A25837F5800ECEE7D /* Dulce.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dulce.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8486BF5D25837F5800ECEE7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +74,6 @@
 		8493F74A25A0D925003CFA86 /* ModelFirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebaseStorage.swift; sourceTree = "<group>"; };
 		849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
-		84D0FA5825990B5F001F0FF9 /* CategoriesEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesEditViewController.swift; sourceTree = "<group>"; };
 		84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		CB64DDBA258A82D9004059B6 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
@@ -141,7 +137,6 @@
 			isa = PBXGroup;
 			children = (
 				84861EDE259BB9140029A1D8 /* CategoryTableViewController.swift */,
-				84861EE1259BBDA60029A1D8 /* CategoryEditViewController.swift */,
 				84861EE3259BBE460029A1D8 /* AddRecipeViewController.swift */,
 			);
 			path = Category;
@@ -204,7 +199,6 @@
 			children = (
 				8486BF772583997B00ECEE7D /* CustomTabBarControllerViewController.swift */,
 				848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */,
-				84D0FA5825990B5F001F0FF9 /* CategoriesEditViewController.swift */,
 				84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */,
 			);
 			path = Categories;
@@ -381,13 +375,11 @@
 				84861EE4259BBE460029A1D8 /* AddRecipeViewController.swift in Sources */,
 				8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */,
 				CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */,
-				84861EE2259BBDA60029A1D8 /* CategoryEditViewController.swift in Sources */,
 				84D0FA5B259914AE001F0FF9 /* AddCategoryViewController.swift in Sources */,
 				8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */,
 				8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */,
 				8483E4F8258CAEA600A228E9 /* Recipe.swift in Sources */,
 				CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */,
-				84D0FA5925990B5F001F0FF9 /* CategoriesEditViewController.swift in Sources */,
 				8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */,
 				848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */,
 				84D0FA57259903A8001F0FF9 /* RecipeViewController.swift in Sources */,

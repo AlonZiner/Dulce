@@ -93,16 +93,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="4ED-I6-tsy">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <connections>
-                                <segue destination="OWB-js-yRn" kind="embed" id="DgJ-hW-ieV"/>
-                            </connections>
-                        </containerView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoryCell" textLabel="XYc-nP-Qsf" detailTextLabel="4li-ka-UbS" style="IBUITableViewCellStyleSubtitle" id="OEZ-sV-g8R">
-                                <rect key="frame" x="0.0" y="72" width="414" height="55.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OEZ-sV-g8R" id="5MK-zL-s21">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
@@ -213,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CA6-8G-opW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8995.652173913044" y="-372.32142857142856"/>
+            <point key="canvasLocation" x="7581" y="-372"/>
         </scene>
         <!--Item-->
         <scene sceneID="OX3-vr-1MN">
@@ -460,32 +453,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T98-KF-TS8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6543" y="-1016"/>
-        </scene>
-        <!--Categories Edit View Controller-->
-        <scene sceneID="K3G-6f-sDa">
-            <objects>
-                <viewController id="OWB-js-yRn" customClass="CategoriesEditViewController" customModule="Dulce" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="H6Z-Kc-cZr">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7L-fr-fiP">
-                                <rect key="frame" x="299" y="7" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Category"/>
-                                <connections>
-                                    <action selector="AddCategory:" destination="OWB-js-yRn" eventType="touchUpInside" id="XQg-eN-mHB"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="GHM-6M-yf2"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Kq-x9-slv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6543" y="-591"/>
+            <point key="canvasLocation" x="5819" y="-1027"/>
         </scene>
         <!--Category-->
         <scene sceneID="1KV-sr-R0n">
@@ -495,16 +463,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <containerView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" id="ycr-gk-rwz">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                            <connections>
-                                <segue destination="aqQ-9z-ueN" kind="embed" id="UwU-TA-exM"/>
-                            </connections>
-                        </containerView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecipeCell" textLabel="9Kh-d6-RMn" detailTextLabel="bhZ-CV-CZg" style="IBUITableViewCellStyleSubtitle" id="5dM-MC-i83">
-                                <rect key="frame" x="0.0" y="72" width="414" height="55.5"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5dM-MC-i83" id="h64-OG-Wyu">
                                     <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
@@ -540,7 +501,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aE5-bj-cIB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7397" y="-372"/>
+            <point key="canvasLocation" x="6700" y="-372"/>
         </scene>
         <!--Add Recipe View Controller-->
         <scene sceneID="tYq-O7-6VP">
@@ -619,32 +580,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agV-B3-qw0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8118.8405797101459" y="-1017.1875"/>
-        </scene>
-        <!--Category Edit View Controller-->
-        <scene sceneID="VEV-ZE-o8t">
-            <objects>
-                <viewController id="aqQ-9z-ueN" customClass="CategoryEditViewController" customModule="Dulce" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="M6P-cn-Xcy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXn-vi-eod">
-                                <rect key="frame" x="312" y="7" width="78" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Recipe"/>
-                                <connections>
-                                    <action selector="AddRecipe:" destination="aqQ-9z-ueN" eventType="touchUpInside" id="kbQ-t0-Utd"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="ujX-wK-zgM"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TUk-9Z-oQ2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8120" y="-591"/>
+            <point key="canvasLocation" x="6700" y="-1027"/>
         </scene>
     </scenes>
     <resources>

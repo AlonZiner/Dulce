@@ -15,8 +15,10 @@ class CategoriesTableTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addCategoryButton()
+        
         self.refreshControl = UIRefreshControl();
-            
+        
         self.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
         self.refreshControl?.beginRefreshing()
         
@@ -56,7 +58,7 @@ class CategoriesTableTableViewController: UITableViewController {
         
         // setting new vc parameters
         resultViewController.categoryName = indexPath.row.description + " " + (categories[indexPath.row].Name ?? "")
-        
+        resultViewController.category = categories[indexPath.row]
         // pushing the new vc
         self.navigationController?.pushViewController(resultViewController, animated: true)
     }
@@ -69,5 +71,30 @@ class CategoriesTableTableViewController: UITableViewController {
         cell.detailTextLabel?.text = "very tasty!!"
         cell.imageView?.image = UIImage(named: "cake")
         return cell
+    }
+    
+    func addCategoryButton(){
+        let resultButton = UIButton()
+        
+        resultButton.backgroundColor = .cyan
+        resultButton.setTitle("Add Category", for: .normal)
+        resultButton.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
+        tableView.addSubview(resultButton)
+        
+        // set position
+        resultButton.translatesAutoresizingMaskIntoConstraints = false
+        resultButton.leftAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.leftAnchor).isActive = true
+        resultButton.rightAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.rightAnchor).isActive = true
+        resultButton.bottomAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        resultButton.widthAnchor.constraint(equalTo: tableView.safeAreaLayoutGuide.widthAnchor).isActive = true
+        resultButton.heightAnchor.constraint(equalToConstant: 50).isActive = true // specify the height of the view
+    }
+    
+    @objc func buttonTapped(sender : UIButton) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "AddCategoryViewController") as! AddCategoryViewController
+        
+        resultViewController.modalPresentationStyle = .overCurrentContext
+        present(resultViewController, animated: true, completion: nil)
     }
 }
