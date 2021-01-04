@@ -31,18 +31,9 @@ class CategoryTableViewController: UITableViewController {
                 self.recipes = _data ?? [Recipe]()
                 self.tableView.reloadData()
             }
+            
             self.refreshControl?.endRefreshing()
-
         }
-        
-//        model.getAllRecipes { (_data:[Recipe]?) in
-//            if (_data != nil) {
-//                self.recipes = _data ?? [Recipe]()
-//                self.tableView.reloadData()
-//            }
-//
-//            self.refreshControl?.endRefreshing()
-//        }
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -76,7 +67,7 @@ class CategoryTableViewController: UITableViewController {
         let recipe = recipes[indexPath.row]
         cell.textLabel?.text = recipe.Title
         cell.detailTextLabel?.text = categoryName
-        cell.imageView?.image = UIImage(named: "cake")
+        cell.imageView?.image = UIImage(named: "recipe")
 
         return cell
     }

@@ -11,10 +11,10 @@ import UIKit
 import Firebase
 
 class FirebaseStorage {
-    static func saveImage(image:UIImage, callback:@escaping (String)->Void){
+    static func saveImage(image:UIImage, imageName:String, callback:@escaping (String)->Void){
         let storageRef = Storage.storage().reference(forURL: "gs://dulce-acbaa.appspot.com")
         let data = image.jpegData(compressionQuality: 0.5)
-        let imageRef = storageRef.child("imageName")
+        let imageRef = storageRef.child(imageName)
         let metadata = StorageMetadata()
         
         metadata.contentType = "image/jpeg"

@@ -17,24 +17,29 @@ class Recipe {
     var Publisher: String // user id
     var Instructions: String
     var lastUpdate: Int64?
-    // comments array
+    var Picture: String
+    var CategoryId: String
     
-    init(Title: String, Difficulty: Int, TimeToMake: Int, Publisher: String, Instructions: String) {
+    init(Title: String, Difficulty: Int, TimeToMake: Int, Publisher: String, Instructions: String, Picture: String, CategoryId: String) {
         self.Id = UUID().uuidString
         self.Title = Title
         self.Difficulty = Difficulty
         self.TimeToMake = TimeToMake
         self.Publisher = Publisher
         self.Instructions = Instructions
+        self.Picture = Picture
+        self.CategoryId = CategoryId
     }
     
-    init(Id: String,Title: String, Difficulty: Int, TimeToMake: Int, Publisher: String, Instructions: String) {
+    init(Id: String,Title: String, Difficulty: Int, TimeToMake: Int, Publisher: String, Instructions: String, Picture: String, CategoryId: String) {
         self.Id = Id
         self.Title = Title
         self.Difficulty = Difficulty
         self.TimeToMake = TimeToMake
         self.Publisher = Publisher
         self.Instructions = Instructions
+        self.Picture = Picture
+        self.CategoryId = CategoryId
     }
     
     init(json:[String:Any]){
@@ -44,6 +49,8 @@ class Recipe {
         TimeToMake = Int(json["timeToMake"] as! String) ?? 0
         Publisher = json["publisher"] as! String
         Instructions = json["instructions"] as! String
+        Picture = json["picture"] as! String
+        CategoryId = json["categoryId"] as! String
         lastUpdate = json["lastUpdate"] as? Int64
     }
     
@@ -55,6 +62,8 @@ class Recipe {
         json["timeToMake"] = TimeToMake.description
         json["publisher"] = Publisher
         json["instructions"] = Instructions
+        json["picture"] = Picture
+        json["categoryId"] = CategoryId
         json["lastUpdate"] = ServerValue.timestamp()
         
         return json;

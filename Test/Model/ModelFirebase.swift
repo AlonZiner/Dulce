@@ -62,4 +62,7 @@ class ModelFirebase {
         })
     }
     
+    func saveImage(image:UIImage, imageName:String, callback:@escaping (String)->Void) {
+        FirebaseStorage.saveImage(image: image, imageName: imageName, callback: callback)
+    }
 }

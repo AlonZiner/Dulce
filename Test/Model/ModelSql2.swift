@@ -27,7 +27,7 @@ class ModelSql2{
     func create(){
         var errormsg: UnsafeMutablePointer<Int8>? = nil
         //let res = sqlite3_exec(database, "DROP TABLE IF EXISTS RECIPES;", nil, nil, &errormsg);
-        var res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS RECIPES (ID TEXT PRIMARY KEY, TITLE TEXT, DIFFICULTY INTEGER, TIME_TO_MAKE INTEGER, PUBLISHER TEXT, INSTRUCTIONS TEXT)", nil, nil, &errormsg);
+        var res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS RECIPES (ID TEXT PRIMARY KEY, TITLE TEXT, DIFFICULTY INTEGER, TIME_TO_MAKE INTEGER, PUBLISHER TEXT, INSTRUCTIONS TEXT, PICTURE TEXT, CATEGORY_ID TEXT)", nil, nil, &errormsg);
 
         if(res != 0){
             print("error creating table");
@@ -81,7 +81,7 @@ class ModelSql2{
     // MARK: RECIPES
     func addRecipe(recipe: Recipe){
         var sqlite3_stmt: OpaquePointer? = nil
-        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO RECIPES(ID, TITLE, DIFFICULTY, TIME_TO_MAKE, PUBLISHER, INSTRUCTIONS) VALUES (?,?,?,?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO RECIPES(ID, TITLE, DIFFICULTY, TIME_TO_MAKE, PUBLISHER, INSTRUCTIONS, PICTURE, CATEGORY_ID) VALUES (?,?,?,?,?,?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
             
             let id = recipe.Id.cString(using: .utf8)
             let title = recipe.Title.cString(using: .utf8)
@@ -89,6 +89,8 @@ class ModelSql2{
             let timeTomake = recipe.TimeToMake
             let publisher = recipe.Publisher.cString(using: .utf8)
             let instructions = recipe.Instructions.cString(using: .utf8)
+            let picture = recipe.Picture.cString(using: .utf8)
+            let categoryId = recipe.CategoryId.cString(using: .utf8)
             
             sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 2, title,-1,nil);
@@ -96,7 +98,8 @@ class ModelSql2{
             sqlite3_bind_int(sqlite3_stmt, 4, Int32(timeTomake))
             sqlite3_bind_text(sqlite3_stmt, 5, publisher,-1,nil);
             sqlite3_bind_text(sqlite3_stmt, 6, instructions,-1,nil);
-            
+            sqlite3_bind_text(sqlite3_stmt, 7, picture,-1,nil);
+            sqlite3_bind_text(sqlite3_stmt, 8, categoryId,-1,nil);
             
             if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
                 print("recipe added succefully")
@@ -119,8 +122,14 @@ class ModelSql2{
                 let publisher = String(cString:sqlite3_column_text(sqlite3_stmt,4)!)
                 let instructions = String(cString:sqlite3_column_text(sqlite3_stmt,5)!)
                 
-                let recipe = Recipe(Id: id, Title: title, Difficulty: difficulty, TimeToMake: timeTomake, Publisher: publisher, Instructions: instructions)
-                
+                let a = sqlite3_column_text(sqlite3_stmt,6)
+                var picture:String = ""
+                if (a != nil){ picture = String(cString: a!) }
+                           
+                let categoryId = String(cString:sqlite3_column_text(sqlite3_stmt,7)!)
+
+                let recipe = Recipe(Id: id, Title: title, Difficulty: difficulty, TimeToMake: timeTomake, Publisher: publisher, Instructions: instructions, Picture: picture, CategoryId: categoryId)
+                                
                 data.append(recipe)
             }
         }
