@@ -138,6 +138,38 @@ class ModelSql2{
         return data
     }
     
+    func getCategoryRecipes(categoryId:String)->[Recipe]{
+        var sqlite3_stmt: OpaquePointer? = nil
+        var data = [Recipe]()
+        
+        if (sqlite3_prepare_v2(database,"SELECT * from RECIPES;",-1,&sqlite3_stmt,nil)
+            == SQLITE_OK){
+            while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
+                let id = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)
+                let title = String(cString:sqlite3_column_text(sqlite3_stmt,1)!)
+                let difficulty = Int(sqlite3_column_int(sqlite3_stmt,2))
+                let timeTomake = Int(sqlite3_column_int(sqlite3_stmt,3))
+                let publisher = String(cString:sqlite3_column_text(sqlite3_stmt,4)!)
+                let instructions = String(cString:sqlite3_column_text(sqlite3_stmt,5)!)
+                
+                let a = sqlite3_column_text(sqlite3_stmt,6)
+                var picture:String = ""
+                if (a != nil){ picture = String(cString: a!) }
+                           
+                let categoryId = String(cString:sqlite3_column_text(sqlite3_stmt,7)!)
+
+                let recipe = Recipe(Id: id, Title: title, Difficulty: difficulty, TimeToMake: timeTomake, Publisher: publisher, Instructions: instructions, Picture: picture, CategoryId: categoryId)
+                                
+                data.append(recipe)
+            }
+        }
+        
+        sqlite3_finalize(sqlite3_stmt)
+        
+        let categoryData = data.filter{recipe in return recipe.CategoryId == categoryId}
+        return categoryData
+    }
+    
     // MARK: CATEGORIES
     func addCategory(category: Category){
         var sqlite3_stmt: OpaquePointer? = nil

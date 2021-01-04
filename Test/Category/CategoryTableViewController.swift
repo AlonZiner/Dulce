@@ -16,19 +16,21 @@ class CategoryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         addRecipeButton()
         
+        self.navigationItem.title = category?.Name ?? "Category"
+        
         self.refreshControl = UIRefreshControl();
-            
         self.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
         self.refreshControl?.beginRefreshing()
         
         reloadData()
     }
-
+    
     @objc func reloadData(){
         let model = RecipeModel()
-        model.getAllRecipesSql{ (_data:[Recipe]?) in
+        model.getCategoryRecipesSql(categoryId: category?.Id ?? ""){ (_data:[Recipe]?) in
             if (_data != nil) {
                 self.recipes = _data ?? [Recipe]()
                 self.tableView.reloadData()
