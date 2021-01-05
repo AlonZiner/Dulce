@@ -72,10 +72,11 @@ class CategoriesTableTableViewController: UITableViewController {
         return cell
     }
     
+    
     func addCategoryButton(){
         let resultButton = UIButton()
-        
-        resultButton.backgroundColor = .cyan
+        let color = HexStringToUIColor.hexStringToUIColor(hex:"#7bafa5",alpha:0.6)
+        resultButton.backgroundColor = color;
         resultButton.setTitle("Add Category", for: .normal)
         resultButton.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
         tableView.addSubview(resultButton)
@@ -96,4 +97,5 @@ class CategoriesTableTableViewController: UITableViewController {
         resultViewController.modalPresentationStyle = .overCurrentContext
         present(resultViewController, animated: true, completion: nil)
     }
+    
 }

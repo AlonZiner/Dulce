@@ -38,6 +38,8 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
             
             difficultyValueLabel.text = String(DifficultySlider.value)
             TTMValueLabel.text = String(TTMSlider.value)
+            
+            RecipeInstructions.becomeFirstResponder()
         }
     }
     
