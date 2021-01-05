@@ -24,10 +24,8 @@ class CustomTabBarControllerViewController: UITabBarController {
     @objc func setText() {
         
         tabBar.items?[0].title = "Favorites"
-        tabBar.items?[1].title = "Chat"
-        tabBar.items?[2].title = "Friends"
-        tabBar.items?[3].title = "Profile"
-        tabBar.items?[4].title = "Home"
+        tabBar.items?[1].title = "Profile"
+        tabBar.items?[2].title = "Home"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
