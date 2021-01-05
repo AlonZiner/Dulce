@@ -33,6 +33,7 @@
 		84D0FA57259903A8001F0FF9 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */; };
 		84D0FA5B259914AE001F0FF9 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */; };
 		8E2355C97DD11AD5ACA700CB /* Pods_Dulce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F993D0162698BC4303B563 /* Pods_Dulce.framework */; };
+		A8A2A64B25A514B400211BC7 /* HexStringToUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2A64A25A514B400211BC7 /* HexStringToUIColor.swift */; };
 		CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */; };
 		CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDBA258A82D9004059B6 /* RecipeModel.swift */; };
 		CB64DDBD258A8653004059B6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB64DDBC258A8643004059B6 /* libsqlite3.0.tbd */; };
@@ -69,6 +70,7 @@
 		849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
+		A8A2A64A25A514B400211BC7 /* HexStringToUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexStringToUIColor.swift; sourceTree = "<group>"; };
 		CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		CB64DDBA258A82D9004059B6 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		CB64DDBC258A8643004059B6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -103,6 +105,7 @@
 				847DA37025927BED00F39ED1 /* Logger.swift */,
 				847DA37325927F8500F39ED1 /* ObjectiveCFile.m */,
 				847DA37225927F8400F39ED1 /* Dulce-Bridging-Header.h */,
+				A8A2A64A25A514B400211BC7 /* HexStringToUIColor.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -370,6 +373,7 @@
 				CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */,
 				8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */,
 				848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */,
+				A8A2A64B25A514B400211BC7 /* HexStringToUIColor.swift in Sources */,
 				84D0FA57259903A8001F0FF9 /* RecipeViewController.swift in Sources */,
 				8486BF6025837F5800ECEE7D /* SceneDelegate.swift in Sources */,
 				847DA37425927F8500F39ED1 /* ObjectiveCFile.m in Sources */,

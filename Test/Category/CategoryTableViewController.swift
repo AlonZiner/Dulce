@@ -86,8 +86,8 @@ class CategoryTableViewController: UITableViewController {
     
     func addRecipeButton(){
         let resultButton = UIButton()
-        
-        resultButton.backgroundColor = .cyan
+        let color = HexStringToUIColor.hexStringToUIColor(hex:"#7bafa5",alpha:0.6)
+        resultButton.backgroundColor = color
         resultButton.setTitle("Add Recipe", for: .normal)
         resultButton.addTarget(self, action: #selector(self.buttonTapped), for: .touchUpInside)
         tableView.addSubview(resultButton)

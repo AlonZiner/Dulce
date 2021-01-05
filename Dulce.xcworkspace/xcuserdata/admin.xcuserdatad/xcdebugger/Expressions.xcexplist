@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "FavoritesViewController.GetUserSql(_:):FavoritesViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "CategoriesTableTableViewController.tableView(_:didSelectRowAt:):CategoriesTableTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "this.categoriesTableView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
