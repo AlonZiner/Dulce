@@ -42,6 +42,10 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
                 self.profileImage.kf.setImage(with: url)
             }
         }
+        
+//        var recipeModel = RecipeModel()
+//        recipeModel.getUserRecipeCount()
+        
     }
     
     @IBAction func EditProfilePicture(_ sender: Any) {

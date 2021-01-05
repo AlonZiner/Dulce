@@ -20,6 +20,9 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var publisherLabel: UILabel!
     
+    @IBOutlet weak var deleteBtn: UIButton!
+    @IBOutlet weak var editBtn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,5 +41,15 @@ class RecipeViewController: UIViewController {
             picture.kf.setImage(with: url)
         }
     }
-
+    
+    @IBAction func edit(_ sender: Any) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "AddRecipeViewController") as! AddRecipeViewController
+        
+        resultViewController.category = Category(id: "123", name: "sdfs")
+        resultViewController.recipe = self.recipe
+        resultViewController.modalPresentationStyle = .overCurrentContext
+        present(resultViewController, animated: true, completion: nil)
+    }
+    
 }

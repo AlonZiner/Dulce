@@ -19,18 +19,7 @@ class Recipe {
     var lastUpdate: Int64?
     var Picture: String
     var CategoryId: String
-    
-    init(Title: String, Difficulty: Int, TimeToMake: Int, Publisher: String, Instructions: String, Picture: String, CategoryId: String) {
-        self.Id = UUID().uuidString
-        self.Title = Title
-        self.Difficulty = Difficulty
-        self.TimeToMake = TimeToMake
-        self.Publisher = Publisher
-        self.Instructions = Instructions
-        self.Picture = Picture
-        self.CategoryId = CategoryId
-    }
-    
+       
     init(Id: String,Title: String, Difficulty: Int, TimeToMake: Int, Publisher: String, Instructions: String, Picture: String, CategoryId: String) {
         self.Id = Id
         self.Title = Title
