@@ -87,8 +87,8 @@ class ModelSql2{
     
     func addUser(user: User){
         var sqlite3_stmt: OpaquePointer? = nil
-        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO RECIPES(ID, NAME, PICTURE) VALUES (?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
-            
+        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO USERS( ID, NAME, PICTURE) VALUES (?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+
             let id = user.Id.cString(using: .utf8)
             let name = user.Name.cString(using: .utf8)
             let picture = user.Picture.cString(using: .utf8)

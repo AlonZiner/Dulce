@@ -12,25 +12,36 @@ import GoogleSignIn
 import Kingfisher
 
 class ProfileViewController: UIViewController {
-
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
-    
     @IBOutlet weak var userEmail: UILabel!
+    
+    var uid:String = ""
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        // TODO: try get user profile picture, if not exists show default picture
+        if let firebaseUser = Auth.auth().currentUser {
+            uid = firebaseUser.uid
+        }
         
-        //profileImage.image = UIImage(named: "cake")
+        reloadData()
+    }
+    
+    func reloadData(){
+        let model = UserModel()
         
-        if let user = Auth.auth().currentUser {
-            userName.text = user.displayName ?? "Profile"
-            userEmail.text = user.email ?? ""
-            
-            let url = URL(string: user.photoURL!.absoluteString)
-            profileImage.kf.setImage(with: url)
+        model.getUser(uid: self.uid){ (user:User?) in
+            if (user != nil) {
+                self.user = user
+                self.userName.text = user?.Name ?? "Profile"
+                self.userEmail.text = "remove email.."
+                
+                let url = URL(string: user?.Picture ?? "")
+                self.profileImage.kf.setImage(with: url)
+            }
         }
     }
     
@@ -45,10 +56,10 @@ class ProfileViewController: UIViewController {
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let loginNavController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
-
+            
             (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(loginNavController)
             print("user successfully sign out")
-
+            
         } catch let error as NSError {
             print ("Error signing out from Firebase: %@", error)
         }
