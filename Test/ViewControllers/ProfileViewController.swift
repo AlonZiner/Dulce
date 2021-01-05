@@ -71,8 +71,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
             self.user?.Picture = url
             model.addUser(user: self.user!)
             self.navigationController?.popViewController(animated: true)
-            picker.dismiss(animated: true, completion: nil)
         }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
     
     

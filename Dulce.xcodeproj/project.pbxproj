@@ -25,8 +25,6 @@
 		8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF75258382FD00ECEE7D /* RegisterViewController.swift */; };
 		8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF772583997B00ECEE7D /* CustomTabBarControllerViewController.swift */; };
 		8486BF7B2583A05300ECEE7D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */; };
-		8486BF7F2583A11400ECEE7D /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF7E2583A11400ECEE7D /* FriendsViewController.swift */; };
-		8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF802583A11F00ECEE7D /* ChatViewController.swift */; };
 		8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF822583A13400ECEE7D /* FavoritesViewController.swift */; };
 		8486F56325890DCD00469BCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8486F56225890DCD00469BCB /* GoogleService-Info.plist */; };
 		848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */; };
@@ -65,8 +63,6 @@
 		8486BF75258382FD00ECEE7D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8486BF772583997B00ECEE7D /* CustomTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarControllerViewController.swift; sourceTree = "<group>"; };
 		8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		8486BF7E2583A11400ECEE7D /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
-		8486BF802583A11F00ECEE7D /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		8486BF822583A13400ECEE7D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8486F56225890DCD00469BCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableTableViewController.swift; sourceTree = "<group>"; };
@@ -185,8 +181,6 @@
 				8486BF75258382FD00ECEE7D /* RegisterViewController.swift */,
 				8486BF732583815A00ECEE7D /* LoginViewController.swift */,
 				8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */,
-				8486BF7E2583A11400ECEE7D /* FriendsViewController.swift */,
-				8486BF802583A11F00ECEE7D /* ChatViewController.swift */,
 				8486BF822583A13400ECEE7D /* FavoritesViewController.swift */,
 				84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */,
 				849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */,
@@ -365,7 +359,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				847DA37125927BED00F39ED1 /* Logger.swift in Sources */,
-				8486BF7F2583A11400ECEE7D /* FriendsViewController.swift in Sources */,
 				8493F74B25A0D925003CFA86 /* ModelFirebaseStorage.swift in Sources */,
 				8486BF7B2583A05300ECEE7D /* ProfileViewController.swift in Sources */,
 				8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */,
@@ -377,7 +370,6 @@
 				CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */,
 				84D0FA5B259914AE001F0FF9 /* AddCategoryViewController.swift in Sources */,
 				8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */,
-				8486BF812583A11F00ECEE7D /* ChatViewController.swift in Sources */,
 				8483E4F8258CAEA600A228E9 /* Recipe.swift in Sources */,
 				CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */,
 				8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */,
