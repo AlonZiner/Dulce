@@ -71,7 +71,7 @@ class CategoryTableViewController: UITableViewController {
 
         let recipe = recipes[indexPath.row]
         cell.textLabel?.text = recipe.Title
-        cell.detailTextLabel?.text = categoryName
+        cell.detailTextLabel?.text = "🕑 \(recipe.TimeToMake) minutes"
         
         let url = URL(string: recipe.Picture)
         if (url != nil)

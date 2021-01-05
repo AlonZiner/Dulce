@@ -68,8 +68,7 @@ class CategoriesTableTableViewController: UITableViewController {
         
         let category = categories[indexPath.row]
         cell.textLabel?.text = category.Name
-        cell.detailTextLabel?.text = "very tasty!!"
-        cell.imageView?.image = UIImage(named: "cake")
+        cell.detailTextLabel?.text = "very tasty!!" // TODO: add category description?
         return cell
     }
     
