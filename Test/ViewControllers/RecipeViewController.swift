@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RecipeViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class RecipeViewController: UIViewController {
     @IBOutlet weak var timetoMakeLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var instructionsTextView: UITextView!
+    @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var publisherLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,14 @@ class RecipeViewController: UIViewController {
         difficualtyLabel.text = recipe?.Difficulty.description
         timetoMakeLabel.text = recipe?.TimeToMake.description
         instructionsTextView.text = recipe?.Instructions
+        publisherLabel.text = recipe?.Publisher // get user name by id
+        picture.image = UIImage(named: "recipe")
+        
+        let url = URL(string: recipe?.Picture ?? "")
+        if (url != nil)
+        {
+            picture.kf.setImage(with: url)
+        }
     }
 
 }

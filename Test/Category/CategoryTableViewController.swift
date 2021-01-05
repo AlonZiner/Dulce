@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CategoryTableViewController: UITableViewController {
 
@@ -71,8 +72,15 @@ class CategoryTableViewController: UITableViewController {
         let recipe = recipes[indexPath.row]
         cell.textLabel?.text = recipe.Title
         cell.detailTextLabel?.text = categoryName
-        cell.imageView?.image = UIImage(named: "recipe")
-
+        
+        let url = URL(string: recipe.Picture)
+        if (url != nil)
+        {
+            cell.imageView?.kf.setImage(with: url, placeholder: UIImage(named: "logo1"), options: nil, progressBlock: nil, completionHandler: { imageResult, error, type, cache in
+              cell.imageView?.image = imageResult
+            })
+        }
+        
         return cell
     }
     
