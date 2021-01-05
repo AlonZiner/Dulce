@@ -24,9 +24,6 @@ class FavoritesViewController: UIViewController {
     }
     
     @IBAction func getRecipe(_ sender: Any) {
-        //let model = RecipeModel()
-        let model = ModelSql2()
-        model.connect()
-        model.drop()
+        ModelSql2.instance.drop()
     }
 }

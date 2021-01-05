@@ -11,12 +11,10 @@ import Firebase
 import FirebaseDatabase
 
 class CategoryModel {
-    let modelFirebase = ModelFirebase.instance
-    let modelSql = ModelSql2()
+    let modelFirebase = ModelFirebase()
+    let modelSql = ModelSql2.instance
     
-    public init(){
-        modelSql.connect()
-    }
+    public init(){    }
     
     func addCategory(category: Category) -> () {
         let json = category.toJson()

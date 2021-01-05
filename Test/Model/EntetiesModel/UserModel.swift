@@ -11,12 +11,10 @@ import Firebase
 import FirebaseDatabase
 
 class UserModel {
-    let modelFirebase = ModelFirebase.instance
-    let modelSql = ModelSql2()
+    let modelFirebase = ModelFirebase()
+    let modelSql = ModelSql2.instance
     
-    init(){
-        modelSql.connect()
-    }
+    init(){ }
     
     func addUser(user: User) -> () {
         modelFirebase.ref.child("users").child(user.Id).setValue(user.toJson())

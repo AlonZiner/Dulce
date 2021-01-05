@@ -68,8 +68,8 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
     var category: Category?
     
     func save() {
-        let model = RecipeModel()
-        let modelFB = ModelFirebase.instance
+        let model = RecipeModel.instance
+        let modelFB = ModelFirebase()
        
         var id = UUID().uuidString
         if (recipe != nil){
