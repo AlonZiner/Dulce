@@ -22,7 +22,6 @@
 		8486BF6925837F5E00ECEE7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8486BF6825837F5E00ECEE7D /* Assets.xcassets */; };
 		8486BF6C25837F5E00ECEE7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486BF6A25837F5E00ECEE7D /* LaunchScreen.storyboard */; };
 		8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF732583815A00ECEE7D /* LoginViewController.swift */; };
-		8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF75258382FD00ECEE7D /* RegisterViewController.swift */; };
 		8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF772583997B00ECEE7D /* CustomTabBarControllerViewController.swift */; };
 		8486BF7B2583A05300ECEE7D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */; };
 		8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF822583A13400ECEE7D /* FavoritesViewController.swift */; };
@@ -60,7 +59,6 @@
 		8486BF6B25837F5E00ECEE7D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8486BF6D25837F5E00ECEE7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8486BF732583815A00ECEE7D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		8486BF75258382FD00ECEE7D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		8486BF772583997B00ECEE7D /* CustomTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarControllerViewController.swift; sourceTree = "<group>"; };
 		8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		8486BF822583A13400ECEE7D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 		8486BF792583A02D00ECEE7D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				8486BF75258382FD00ECEE7D /* RegisterViewController.swift */,
 				8486BF732583815A00ECEE7D /* LoginViewController.swift */,
 				8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */,
 				8486BF822583A13400ECEE7D /* FavoritesViewController.swift */,
@@ -366,7 +363,6 @@
 				8483E4FD258CB14000A228E9 /* CategoryModel.swift in Sources */,
 				8483E4FA258CAFA600A228E9 /* User.swift in Sources */,
 				84861EE4259BBE460029A1D8 /* AddRecipeViewController.swift in Sources */,
-				8486BF76258382FD00ECEE7D /* RegisterViewController.swift in Sources */,
 				CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */,
 				84D0FA5B259914AE001F0FF9 /* AddCategoryViewController.swift in Sources */,
 				8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */,
