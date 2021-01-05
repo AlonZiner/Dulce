@@ -26,27 +26,33 @@ class ModelSql2{
     // MARK: CREATE TABLES
     func create(){
         var errormsg: UnsafeMutablePointer<Int8>? = nil
-        //let res = sqlite3_exec(database, "DROP TABLE IF EXISTS RECIPES;", nil, nil, &errormsg);
-        var res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS RECIPES (ID TEXT PRIMARY KEY, TITLE TEXT, DIFFICULTY INTEGER, TIME_TO_MAKE INTEGER, PUBLISHER TEXT, INSTRUCTIONS TEXT, PICTURE TEXT, CATEGORY_ID TEXT)", nil, nil, &errormsg);
+        var res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS USERS (ID TEXT PRIMARY KEY, NAME TEXT, PICTURE TEXT)", nil, nil, &errormsg);
 
         if(res != 0){
-            print("error creating table");
+            print("error creating users table");
+            return
+        }
+        
+        res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS RECIPES (ID TEXT PRIMARY KEY, TITLE TEXT, DIFFICULTY INTEGER, TIME_TO_MAKE INTEGER, PUBLISHER TEXT, INSTRUCTIONS TEXT, PICTURE TEXT, CATEGORY_ID TEXT)", nil, nil, &errormsg);
+
+        if(res != 0){
+            print("error creating recipes table");
             return
         }
         
         res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS CATEGORIES (ID TEXT PRIMARY KEY, NAME TEXT)", nil, nil, &errormsg);
         if(res != 0){
-            print("error creating table");
+            print("error creating categories table");
             return
         }
         
         res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS LAST_UPDATE_DATE (NAME TEXT PRIMARY KEY, DATE DOUBLE)", nil, nil, &errormsg);
         if(res != 0){
-            print("error creating table");
+            print("error creating last update date table");
             return
         }
     }
-    
+     
     // MARK: LAST UPDATE DATE
     func setLastUpdate(name:String, lastUpdated:Int64){
         var sqlite3_stmt: OpaquePointer? = nil
@@ -60,7 +66,6 @@ class ModelSql2{
         }
         sqlite3_finalize(sqlite3_stmt)
     }
-    
     
     func getLastUpdateDate(name:String)->Int64{
         var date:Int64 = 0;
@@ -78,6 +83,51 @@ class ModelSql2{
         return date
     }
 
+    // MARK: USERS
+    
+    func addUser(user: User){
+        var sqlite3_stmt: OpaquePointer? = nil
+        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO RECIPES(ID, NAME, PICTURE) VALUES (?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+            
+            let id = user.Id.cString(using: .utf8)
+            let name = user.Name.cString(using: .utf8)
+            let picture = user.Picture.cString(using: .utf8)
+            
+            sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
+            sqlite3_bind_text(sqlite3_stmt, 2, name,-1,nil);
+            sqlite3_bind_text(sqlite3_stmt, 3, picture,-1,nil);
+            
+            if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
+                print("user added succefully")
+            }
+        }
+    }
+    
+    func getUserbyId(uid:String)-> User? {
+        var sqlite3_stmt: OpaquePointer? = nil
+        var data = [User]()
+        
+        if (sqlite3_prepare_v2(database,"SELECT * from USERS where id like ?;",-1,&sqlite3_stmt,nil)
+            == SQLITE_OK){
+            
+            sqlite3_bind_text(sqlite3_stmt, 1, uid,-1,nil);
+            
+            while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
+
+                let id = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)
+                let name = String(cString:sqlite3_column_text(sqlite3_stmt,1)!)
+                let picture = String(cString:sqlite3_column_text(sqlite3_stmt,2)!)
+                
+                let user = User(Id: id, name: name, Picture: picture)
+                                
+                data.append(user)
+            }
+        }
+        
+        sqlite3_finalize(sqlite3_stmt)
+        return data.first
+    }
+    
     // MARK: RECIPES
     func addRecipe(recipe: Recipe){
         var sqlite3_stmt: OpaquePointer? = nil
@@ -211,7 +261,14 @@ class ModelSql2{
     // MARK: DROP TABLES
     func drop(){
         var errormsg: UnsafeMutablePointer<Int8>? = nil
-        var res = sqlite3_exec(database, "DROP TABLE IF EXISTS RECIPES;", nil, nil, &errormsg);
+        var res = sqlite3_exec(database, "DROP TABLE IF EXISTS USERS;", nil, nil, &errormsg);
+
+        if(res != 0){
+            print("error creating table");
+            return
+        }
+        
+        res = sqlite3_exec(database, "DROP TABLE IF EXISTS RECIPES;", nil, nil, &errormsg);
 
         if(res != 0){
             print("error creating table");

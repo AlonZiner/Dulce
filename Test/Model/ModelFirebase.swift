@@ -86,6 +86,29 @@ class ModelFirebase {
         })
     }
     
+    func getUser(since:Int64, uid:String, callback: @escaping (User?)->Void){
+        ref.child("users")
+            .queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
+            .observe(.value, with:{ (snapshot: DataSnapshot) in
+            
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                var data = [User]();
+                
+                for snap in snapshot {
+                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                        let user = User(json: postDict)
+                        data.append(user)
+                    } else {
+                        print("failed to convert")
+                    }
+                }
+                
+                let user = data.filter{u in return u.Id == uid}.first
+                callback(user)
+            }
+        })
+    }
+    
     func saveImage(image:UIImage, imageName:String, callback:@escaping (String)->Void) {
         FirebaseStorage.saveImage(image: image, imageName: imageName, callback: callback)
     }

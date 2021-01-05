@@ -11,33 +11,38 @@ import Firebase
 import FirebaseDatabase
 
 class UserModel {
-    static let model = ModelFirebase.instance.ref.child("users")
+    let modelFirebase = ModelFirebase.instance
+    let modelSql = ModelSql2()
     
-    private init(){}
-    
-    static func addUser(user: [String:String]) -> () {
-        model.child(user["id"]!).setValue(user)
+    func addUser(user: User) -> () {
+        modelFirebase.ref.child("users").child(user.Id).setValue(user.toJson())
     }
     
-    static func getAllStudents(callback: @escaping ([User]?)->Void){
-        let ref = UserModel.model
-
-        ref.observe(.value, with:{ (snapshot: DataSnapshot) in
+    func getUser(uid:String, callback: @escaping (User?)->Void){
+        //get the local last update date
+        var lud = modelSql.getLastUpdateDate(name: "USERS");
+        let oldLud = lud
+        
+        //get the cloud updates since the local update date
+        modelFirebase.getUser(since:lud, uid: uid) { (user) in
+            //insert update to the local db
             
-            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-                var data = [User]();
-                
-                for snap in snapshot {
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let user = User(json: postDict)
-                        data.append(user)
-                    } else {
-                        print("failed to convert")
-                    }
-                }
-                
-                callback(data)
+            if (user == nil){return}
+            
+            self.modelSql.addUser(user: user!)
+            
+            if user!.lastUpdate != nil && user!.lastUpdate! > lud {
+                lud = user!.lastUpdate!
             }
-        })
+            
+            if (lud > oldLud){
+                //update the students local last update date
+                self.modelSql.setLastUpdate(name: "USERS", lastUpdated: lud)
+            }
+            
+            // get the complete student list
+            let finalData = self.modelSql.getUserbyId(uid: uid)
+            callback(finalData);
+        }
     }
 }

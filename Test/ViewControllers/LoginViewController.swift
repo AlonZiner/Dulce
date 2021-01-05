@@ -58,8 +58,11 @@ extension LoginViewController: GIDSignInDelegate {
                 let user = Auth.auth().currentUser!
 
                 // if the user isnt exists - add it
-                let newUser = User(Id: UUID().uuidString, name: user.displayName ?? "user", EMail: user.email ?? "", Picture: user.photoURL?.absoluteString)
-                UserModel.addUser(user: newUser.toJson())
+                
+                let newUser = User(Id: user.uid, name: user.displayName ?? "user", Picture: user.photoURL?.absoluteString ?? "")
+                
+                let model = UserModel()
+                model.addUser(user: newUser)
                 
                 
                 // This is to get the SceneDelegate object from your view controller

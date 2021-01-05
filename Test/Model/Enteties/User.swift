@@ -7,33 +7,36 @@
 //
 
 import Foundation
+import Firebase
 
 class User: NSObject {
-    var Id: String?
-    var Name: String?
-    var Email: String? // keep it if email can be obtained by firebase auth
-    var Picture: String?
+    var Id: String
+    var Name: String
+    var Picture: String
+    var lastUpdate: Int64?
+
     // recipe ids array for Favorites
     
-    init(Id: String, name: String?, EMail: String?, Picture: String?) {
+    init(Id: String, name: String, Picture: String) {
         self.Id = Id
         self.Name = name
-        self.Email = EMail
         self.Picture = Picture
     }
     
     init(json:[String:Any]){
-        Id = json["id"] as! String?
-        Name = json["name"] as! String?
-        Email = json["email"] as! String?
-        Picture = json["picture"] as! String?
+        Id = json["id"] as! String
+        Name = json["name"] as! String
+        Picture = json["picture"] as! String
+        lastUpdate = json["lastUpdate"] as? Int64
     }
     
-    func toJson() -> [String:String] {
-        var json = [String:String]();
+    func toJson() -> [String:Any] {
+        var json = [String:Any]();
         json["id"] = Id
         json["name"] = Name
         json["picture"] = Picture
+        json["lastUpdate"] = ServerValue.timestamp()
+
         return json;
     }
     
