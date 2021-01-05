@@ -11,7 +11,13 @@ import Foundation
 class ModelSql2{
     var database: OpaquePointer? = nil
     
-    func connect() {
+    static let instance = ModelSql2()
+    
+    private init(){
+        connect()
+    }
+    
+    private func connect() {
         let dbFileName = "database2.db"
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first{
             let path = dir.appendingPathComponent(dbFileName)
@@ -24,7 +30,7 @@ class ModelSql2{
     }
 
     // MARK: CREATE TABLES
-    func create(){
+    private func create(){
         var errormsg: UnsafeMutablePointer<Int8>? = nil
         var res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS USERS (ID TEXT PRIMARY KEY, NAME TEXT, PICTURE TEXT)", nil, nil, &errormsg);
 

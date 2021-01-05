@@ -11,25 +11,25 @@ import Firebase
 import FirebaseDatabase
 
 class RecipeModel {
-    let modelFirebase = ModelFirebase.instance
-    let modelSql = ModelSql2()
+    let modelFirebase = ModelFirebase()
+    let modelSql = ModelSql2.instance
     
-    init(){
-        modelSql.connect()
-    }
+    static let instance = RecipeModel()
+        
+    private init(){}
     
     func addRecipe(recipe: Recipe) -> () {
         let json = recipe.toJson()
-        modelFirebase.ref.child("recipes").child(json["id"]! as! String).setValue(json)
+        self.modelFirebase.ref.child("recipes").child(json["id"]! as! String).setValue(json)
     }
     
     func getAllRecipesSql(callback: @escaping ([Recipe]?)->Void){
         //get the local last update date
-        var lud = modelSql.getLastUpdateDate(name: "RECIPES");
+        var lud = self.modelSql.getLastUpdateDate(name: "RECIPES");
         let oldLud = lud
         
         //get the cloud updates since the local update date
-        modelFirebase.getAllRecipesFB(since:lud) { (data) in
+        self.modelFirebase.getAllRecipesFB(since:lud) { (data) in
             //insert update to the local db
             for recipe in data!{
                 self.modelSql.addRecipe(recipe: recipe)
@@ -52,7 +52,7 @@ class RecipeModel {
     
     func getCategoryRecipesSql(categoryId:String, callback: @escaping ([Recipe]?)->Void){
         //get the local last update date
-        var lud = modelSql.getLastUpdateDate(name: "RECIPES");
+        var lud = self.modelSql.getLastUpdateDate(name: "RECIPES");
         let oldLud = lud
         
         //get the cloud updates since the local update date

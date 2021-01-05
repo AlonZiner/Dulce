@@ -30,8 +30,7 @@ class CategoryTableViewController: UITableViewController {
     }
     
     @objc func reloadData(){
-        let model = RecipeModel()
-        model.getCategoryRecipesSql(categoryId: category?.Id ?? ""){ (_data:[Recipe]?) in
+        RecipeModel.instance.getCategoryRecipesSql(categoryId: category?.Id ?? ""){ (_data:[Recipe]?) in
             if (_data != nil) {
                 self.recipes = _data ?? [Recipe]()
                 self.tableView.reloadData()
