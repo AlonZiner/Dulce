@@ -12,9 +12,8 @@ import FirebaseDatabase
 
 class ModelFirebase {
     var ref: DatabaseReference!
-    static let instance = ModelFirebase()
-
-    private init() {
+    
+    init() {
         ref = Database.database(url: "https://dulce-acbaa-default-rtdb.europe-west1.firebasedatabase.app").reference()
     }
     
