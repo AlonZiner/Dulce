@@ -31,17 +31,17 @@ class UserModel {
         modelFirebase.getUser(since:lud, uid: uid) { (user) in
             //insert update to the local db
             
-            if (user == nil){return}
-            
-            self.modelSql.addUser(user: user!)
-            
-            if user!.lastUpdate != nil && user!.lastUpdate! > lud {
-                lud = user!.lastUpdate!
-            }
-            
-            if (lud > oldLud){
-                //update the students local last update date
-                self.modelSql.setLastUpdate(name: "USERS", lastUpdated: lud)
+            if (user != nil){
+                self.modelSql.addUser(user: user!)
+                
+                if user!.lastUpdate != nil && user!.lastUpdate! > lud {
+                    lud = user!.lastUpdate!
+                }
+                
+                if (lud > oldLud){
+                    //update the students local last update date
+                    self.modelSql.setLastUpdate(name: "USERS", lastUpdated: lud)
+                }
             }
             
             // get the complete student list
