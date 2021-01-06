@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import Firebase
 
 class RecipeViewController: UIViewController {
 
@@ -26,8 +27,10 @@ class RecipeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        let isCurrentUser = Auth.auth().currentUser?.uid == recipe?.Publisher
+        
+        deleteBtn.isHidden = (!isCurrentUser)
+        editBtn.isHidden = (!isCurrentUser)
         
         titleLabel.text = recipe?.Title
         difficualtyLabel.text = recipe?.Difficulty.description
