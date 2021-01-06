@@ -14,13 +14,10 @@ class FavoritesTableViewController: UITableViewController {
     
 
     var favorites:[Favorite] = [Favorite]()
-    let recipy = Recipe(Id: "string", Title: "Cake", Difficulty: 2, TimeToMake: 4, Publisher: "string", Instructions: "instructions", Picture: "picture", CategoryId: "category");
-    
     var recipes: [Recipe] = [Recipe]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.recipes.append(self.recipy)
         
         // go to db get data from favorites
         
@@ -76,10 +73,24 @@ class FavoritesTableViewController: UITableViewController {
     
     func reloadData() {
         if let user = Auth.auth().currentUser {
-            FavoriteModel.instance.getUserFavorites(userId: user.uid){ (data) in
+            FavoriteModel.instance.getUserFavorites(userId: user.uid){ (fav) in
                 // put data in tableview data souce
                 // change controller to table view controller
-                self.favorites = data;
+                
+                self.favorites = fav
+                self.loadRecipes()
+            }
+        }
+    }
+    
+    
+    func loadRecipes(){
+        for f in favorites {
+            RecipeModel.instance.getRecipebyId(recipeId: f.RecipeId){ (rec) in
+                if (rec != nil){
+                    self.recipes.append(rec!)
+                    self.tableView.reloadData()
+                }
             }
         }
     }
