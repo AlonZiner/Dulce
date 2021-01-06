@@ -23,14 +23,13 @@ class CustomTabBarControllerViewController: UITabBarController {
     
     @objc func setText() {
         
-        tabBar.items?[0].title = "Favorites"
-        tabBar.items?[1].title = "Profile"
-        tabBar.items?[2].title = "Home"
+        tabBar.items?[0].title = "Profile"
+        tabBar.items?[1].title = "Home"
+        tabBar.items?[2].title = "Favorites"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-        self.selectedIndex = 4
     }
 }

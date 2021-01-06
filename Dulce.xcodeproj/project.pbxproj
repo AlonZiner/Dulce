@@ -24,7 +24,6 @@
 		8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF732583815A00ECEE7D /* LoginViewController.swift */; };
 		8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF772583997B00ECEE7D /* CustomTabBarControllerViewController.swift */; };
 		8486BF7B2583A05300ECEE7D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */; };
-		8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486BF822583A13400ECEE7D /* FavoritesViewController.swift */; };
 		8486F56325890DCD00469BCB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8486F56225890DCD00469BCB /* GoogleService-Info.plist */; };
 		848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */; };
 		8493F74925A0BEAC003CFA86 /* ModelSql2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493F74825A0BEAC003CFA86 /* ModelSql2.swift */; };
@@ -36,6 +35,7 @@
 		84D0FA5B259914AE001F0FF9 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */; };
 		8E2355C97DD11AD5ACA700CB /* Pods_Dulce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F993D0162698BC4303B563 /* Pods_Dulce.framework */; };
 		A8A2A64B25A514B400211BC7 /* HexStringToUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2A64A25A514B400211BC7 /* HexStringToUIColor.swift */; };
+		A8A2A67025A600F700211BC7 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A2A66F25A600F700211BC7 /* FavoritesTableViewController.swift */; };
 		CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */; };
 		CB64DDBB258A82D9004059B6 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB64DDBA258A82D9004059B6 /* RecipeModel.swift */; };
 		CB64DDBD258A8653004059B6 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CB64DDBC258A8643004059B6 /* libsqlite3.0.tbd */; };
@@ -64,7 +64,6 @@
 		8486BF732583815A00ECEE7D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8486BF772583997B00ECEE7D /* CustomTabBarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarControllerViewController.swift; sourceTree = "<group>"; };
 		8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		8486BF822583A13400ECEE7D /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		8486F56225890DCD00469BCB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		848A0D3125868CD400774748 /* CategoriesTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesTableTableViewController.swift; sourceTree = "<group>"; };
 		8493F74825A0BEAC003CFA86 /* ModelSql2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSql2.swift; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		A8A2A64A25A514B400211BC7 /* HexStringToUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexStringToUIColor.swift; sourceTree = "<group>"; };
+		A8A2A66F25A600F700211BC7 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
 		CB64DDB7258A70CE004059B6 /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		CB64DDBA258A82D9004059B6 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		CB64DDBC258A8643004059B6 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
@@ -187,9 +187,9 @@
 			children = (
 				8486BF732583815A00ECEE7D /* LoginViewController.swift */,
 				8486BF7A2583A05300ECEE7D /* ProfileViewController.swift */,
-				8486BF822583A13400ECEE7D /* FavoritesViewController.swift */,
 				84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */,
 				849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */,
+				A8A2A66F25A600F700211BC7 /* FavoritesTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -367,6 +367,7 @@
 				847DA37125927BED00F39ED1 /* Logger.swift in Sources */,
 				8493F74B25A0D925003CFA86 /* ModelFirebaseStorage.swift in Sources */,
 				8486BF7B2583A05300ECEE7D /* ProfileViewController.swift in Sources */,
+				A8A2A67025A600F700211BC7 /* FavoritesTableViewController.swift in Sources */,
 				8486BF782583997B00ECEE7D /* CustomTabBarControllerViewController.swift in Sources */,
 				8486BF5E25837F5800ECEE7D /* AppDelegate.swift in Sources */,
 				8483E4FD258CB14000A228E9 /* CategoryModel.swift in Sources */,
@@ -377,7 +378,6 @@
 				8486BF742583815A00ECEE7D /* LoginViewController.swift in Sources */,
 				8483E4F8258CAEA600A228E9 /* Recipe.swift in Sources */,
 				CB64DDB8258A70CE004059B6 /* ModelFirebase.swift in Sources */,
-				8486BF832583A13400ECEE7D /* FavoritesViewController.swift in Sources */,
 				848A0D3225868CD400774748 /* CategoriesTableTableViewController.swift in Sources */,
 				A8A2A64B25A514B400211BC7 /* HexStringToUIColor.swift in Sources */,
 				84D0FA57259903A8001F0FF9 /* RecipeViewController.swift in Sources */,
