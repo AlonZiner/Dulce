@@ -28,4 +28,19 @@ class FirebaseStorage {
             }
         }
     }
+    
+    static func funcDeleteImage(imageName: String) {
+        let storage = Storage.storage().reference(forURL: "gs://dulce-acbaa.appspot.com")
+        
+        let imageRef = storage.child(imageName)
+        imageRef.delete { error in
+            if error != nil {
+                // Uh-oh, an error occurred!
+                print("error deleteing image")
+            } else {
+                // File deleted successfully
+                print("image deleteed successfuly")
+            }
+        }
+    }
 }

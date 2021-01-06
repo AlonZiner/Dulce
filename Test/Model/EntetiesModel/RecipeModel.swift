@@ -20,6 +20,7 @@ class RecipeModel {
     
     func addRecipe(recipe: Recipe) -> () {
         let json = recipe.toJson()
+        // TODO: to async call inside modelFirebase - (addRecipe)
         self.modelFirebase.ref.child("recipes").child(json["id"]! as! String).setValue(json)
     }
     
@@ -48,6 +49,14 @@ class RecipeModel {
             let finalData = self.modelSql.getAllRecipes()
             callback(finalData);
         }
+    }
+    
+    func deleteRecipe(recipe: Recipe, callback: @escaping ()->Void){
+        self.modelSql.deleteRecipe(recipe: recipe)
+        self.modelFirebase.deleteRecipe(recipe: recipe)
+        FirebaseStorage.funcDeleteImage(imageName: recipe.Id)
+        
+        callback()
     }
     
     func getCategoryRecipesSql(categoryId:String, callback: @escaping ([Recipe]?)->Void){

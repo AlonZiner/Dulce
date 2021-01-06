@@ -78,4 +78,9 @@ class RecipeViewController: UIViewController {
         addToFavorites.setImage(imageFilled, for: .selected)
     }
     
+    @IBAction func deleteRecipe(_ sender: Any) {
+        RecipeModel.instance.deleteRecipe(recipe: self.recipe!){
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
 }

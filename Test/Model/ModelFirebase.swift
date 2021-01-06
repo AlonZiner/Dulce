@@ -108,6 +108,28 @@ class ModelFirebase {
         })
     }
     
+    // make async
+    func deleteRecipe(recipe: Recipe){
+          //let uid = Auth.auth().currentUser!.uid
+          //let storage = FIRStorage.storage().reference(forURL: "gs://cloudcamerattt.appspot.com")
+
+          // Remove the post from the DB
+            ref.child("recipes").child(recipe.Id).removeValue { (error, dbReference)  in
+            if error != nil {
+                print("error \(String(describing: error))")
+            }
+          }
+          // Remove the image from storage
+//          let imageRef = storage.child("posts").child(uid).child("\(selectedPost.postID).jpg")
+//          imageRef.delete { error in
+//            if let error = error {
+//              // Uh-oh, an error occurred!
+//            } else {
+//             // File deleted successfully
+//            }
+//          }
+    }
+    
     func saveImage(image:UIImage, imageName:String, callback:@escaping (String)->Void) {
         FirebaseStorage.saveImage(image: image, imageName: imageName, callback: callback)
     }

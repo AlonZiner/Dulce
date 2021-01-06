@@ -228,6 +228,20 @@ class ModelSql2{
         return categoryData
     }
     
+    func deleteRecipe(recipe: Recipe){
+        var sqlite3_stmt: OpaquePointer? = nil
+        if (sqlite3_prepare_v2(database,"DELETE FROM RECIPES WHERE ID = ?;",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+            
+            let id = recipe.Id.cString(using: .utf8)
+            
+            sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
+            
+            if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
+                print("recipe deleted succefully")
+            }
+        }
+    }
+    
     // MARK: CATEGORIES
     func addCategory(category: Category){
         var sqlite3_stmt: OpaquePointer? = nil
