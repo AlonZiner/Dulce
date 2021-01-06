@@ -40,6 +40,22 @@ class FavoritesTableViewController: UITableViewController {
         return recipes.count
     }
     
+    // handle click on single cell
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        // navigation on cell clicking
+       
+        // creating the new view controller
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let resultViewController = storyBoard.instantiateViewController(withIdentifier: "RecipeViewController") as! RecipeViewController
+        
+        // setting new vc parameters
+        resultViewController.recipe = recipes[indexPath.row]
+        
+        // pushing the new vc
+        present(resultViewController, animated: true, completion: nil)
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeCell", for: indexPath)
 
