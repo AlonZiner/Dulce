@@ -53,7 +53,7 @@ class RecipeModel {
     
     func deleteRecipe(recipe: Recipe, callback: @escaping ()->Void){
         self.modelSql.deleteRecipe(recipe: recipe)
-        self.modelFirebase.deleteRecipe(recipe: recipe)
+        self.modelFirebase.deleteRecipe(recipe: recipe){}
         FirebaseStorage.funcDeleteImage(imageName: recipe.Id)
         
         callback()

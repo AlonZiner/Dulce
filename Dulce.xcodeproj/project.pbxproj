@@ -30,6 +30,8 @@
 		8493F74925A0BEAC003CFA86 /* ModelSql2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493F74825A0BEAC003CFA86 /* ModelSql2.swift */; };
 		8493F74B25A0D925003CFA86 /* ModelFirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8493F74A25A0D925003CFA86 /* ModelFirebaseStorage.swift */; };
 		849A7FF3259CF1BF0064239F /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */; };
+		84BF543A25A5DF230098F8D7 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF543925A5DF230098F8D7 /* Favorite.swift */; };
+		84BF543C25A5DFC30098F8D7 /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF543B25A5DFC30098F8D7 /* FavoriteModel.swift */; };
 		84D0FA57259903A8001F0FF9 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */; };
 		84D0FA5B259914AE001F0FF9 /* AddCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */; };
 		8E2355C97DD11AD5ACA700CB /* Pods_Dulce.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65F993D0162698BC4303B563 /* Pods_Dulce.framework */; };
@@ -68,6 +70,8 @@
 		8493F74825A0BEAC003CFA86 /* ModelSql2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSql2.swift; sourceTree = "<group>"; };
 		8493F74A25A0D925003CFA86 /* ModelFirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebaseStorage.swift; sourceTree = "<group>"; };
 		849A7FF2259CF1BF0064239F /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		84BF543925A5DF230098F8D7 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		84BF543B25A5DFC30098F8D7 /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		84D0FA56259903A8001F0FF9 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		84D0FA5A259914AE001F0FF9 /* AddCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryViewController.swift; sourceTree = "<group>"; };
 		A8A2A64A25A514B400211BC7 /* HexStringToUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexStringToUIColor.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				8483E4F5258CAD7200A228E9 /* Category.swift */,
 				8483E4F7258CAEA600A228E9 /* Recipe.swift */,
 				8483E4F9258CAFA600A228E9 /* User.swift */,
+				84BF543925A5DF230098F8D7 /* Favorite.swift */,
 			);
 			path = Enteties;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				CB64DDBA258A82D9004059B6 /* RecipeModel.swift */,
 				8483E4FC258CB14000A228E9 /* CategoryModel.swift */,
 				8483E4FE258CB14B00A228E9 /* UserModel.swift */,
+				84BF543B25A5DFC30098F8D7 /* FavoriteModel.swift */,
 			);
 			path = EntetiesModel;
 			sourceTree = "<group>";
@@ -378,8 +384,10 @@
 				8486BF6025837F5800ECEE7D /* SceneDelegate.swift in Sources */,
 				847DA37425927F8500F39ED1 /* ObjectiveCFile.m in Sources */,
 				8493F74925A0BEAC003CFA86 /* ModelSql2.swift in Sources */,
+				84BF543A25A5DF230098F8D7 /* Favorite.swift in Sources */,
 				8483E4FF258CB14B00A228E9 /* UserModel.swift in Sources */,
 				849A7FF3259CF1BF0064239F /* HomeNavigationController.swift in Sources */,
+				84BF543C25A5DFC30098F8D7 /* FavoriteModel.swift in Sources */,
 				8483E4F6258CAD7200A228E9 /* Category.swift in Sources */,
 				84861EDF259BB9140029A1D8 /* CategoryTableViewController.swift in Sources */,
 			);

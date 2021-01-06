@@ -52,6 +52,12 @@ class ModelSql2{
             return
         }
         
+        res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS FAVORITES (ID TEXT PRIMARY KEY, USER_ID TEXT, RECIPE_ID TEXT)", nil, nil, &errormsg);
+        if(res != 0){
+            print("error creating favorites table");
+            return
+        }
+        
         res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS LAST_UPDATE_DATE (NAME TEXT PRIMARY KEY, DATE DOUBLE)", nil, nil, &errormsg);
         if(res != 0){
             print("error creating last update date table");
@@ -278,6 +284,49 @@ class ModelSql2{
         
         sqlite3_finalize(sqlite3_stmt)
         return data
+    }
+    
+    // MARK: FAVORITES
+    
+    func addFavorite(favorite: Favorite){
+        var sqlite3_stmt: OpaquePointer? = nil
+        if (sqlite3_prepare_v2(database,"INSERT OR REPLACE INTO FAVORITES(ID, USER_ID, RECIPE_ID) VALUES (?,?,?);",-1, &sqlite3_stmt,nil) == SQLITE_OK){
+            
+            let id = favorite.Id.cString(using: .utf8)
+            let userId = favorite.UserId.cString(using: .utf8)
+            let recipeId = favorite.RecipeId.cString(using: .utf8)
+            
+            sqlite3_bind_text(sqlite3_stmt, 1, id,-1,nil);
+            sqlite3_bind_text(sqlite3_stmt, 2, userId,-1,nil);
+            sqlite3_bind_text(sqlite3_stmt, 3, recipeId,-1,nil);
+            
+            if(sqlite3_step(sqlite3_stmt) == SQLITE_DONE){
+                print("favorite added succefully")
+            }
+        }
+    }
+    
+    func getUserFavorites(userId:String)->[Favorite]{
+        var sqlite3_stmt: OpaquePointer? = nil
+        var data = [Favorite]()
+        
+        if (sqlite3_prepare_v2(database,"SELECT * from FAVORITES;",-1,&sqlite3_stmt,nil)
+            == SQLITE_OK){
+            while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
+                
+                let id = String(cString:sqlite3_column_text(sqlite3_stmt,0)!)
+                let uid = String(cString:sqlite3_column_text(sqlite3_stmt,1)!)
+                let recipeId = String(cString:sqlite3_column_text(sqlite3_stmt,2)!)
+                
+
+                let favorite = Favorite(Id: id, userId: uid, recipeId: recipeId)
+                
+                data.append(favorite)
+            }
+        }
+
+        let userFavorites = data.filter{favorite in return favorite.UserId == userId}
+        return userFavorites
     }
     
     // MARK: DROP TABLES

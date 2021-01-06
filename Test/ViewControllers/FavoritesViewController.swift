@@ -12,14 +12,21 @@ import Firebase
 class FavoritesViewController: UIViewController {
     
     @IBOutlet weak var userName: UILabel!
+    var userFavorites:[Favorite] = [Favorite]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        // example for using authinticated user data in app
+        reloadData()
+    }
+    
+    func reloadData() {
         if let user = Auth.auth().currentUser {
-            userName.text = user.displayName ?? ""
+          userName.text = user.displayName ?? ""
+               
+            FavoriteModel.instance.getUserFavorites(userId: user.uid){ (data) in
+                // put data in tableview data souce
+                // change controller to table view controller
+            }
         }
     }
     

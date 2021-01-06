@@ -58,6 +58,14 @@ class RecipeViewController: UIViewController {
     
     @IBAction func addToFavoritesAction(_ sender: Any) {
         addToFavorites.isSelected.toggle()
+        
+        if (addToFavorites.isSelected){
+            
+            let favorite = Favorite(Id: UUID().uuidString, userId: Auth.auth().currentUser!.uid, recipeId: recipe!.Id)
+            FavoriteModel.instance.addfavorite(favorite: favorite){
+                // callback..
+            }
+        }
     }
     
     @IBAction func edit(_ sender: Any) {
@@ -70,7 +78,6 @@ class RecipeViewController: UIViewController {
         resultViewController.modalPresentationStyle = .overCurrentContext
         present(resultViewController, animated: true, completion: self.dismissView)
     }
-    
     
     func configureUI() {
         let image = UIImage(systemName: "star")
