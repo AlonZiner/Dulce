@@ -122,4 +122,17 @@ class AddRecipeViewController: UIViewController, UIImagePickerControllerDelegate
         let currentValue = Int(sender.value)
         difficultyValueLabel.text = "\(currentValue)"
     }
+    
+    var recipeVc: RecipeViewController?
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isBeingDismissed {
+            // TODO: Do your stuff here.
+            if (self.recipeVc != nil){
+                self.recipeVc!.dismissView()
+            }
+        }
+    }
+    
 }

@@ -66,8 +66,9 @@ class RecipeViewController: UIViewController {
         
         resultViewController.category = Category(id: "123", name: "sdfs")
         resultViewController.recipe = self.recipe
+        resultViewController.recipeVc = self
         resultViewController.modalPresentationStyle = .overCurrentContext
-        present(resultViewController, animated: true, completion: nil)
+        present(resultViewController, animated: true, completion: self.dismissView)
     }
     
     
@@ -80,7 +81,11 @@ class RecipeViewController: UIViewController {
     
     @IBAction func deleteRecipe(_ sender: Any) {
         RecipeModel.instance.deleteRecipe(recipe: self.recipe!){
-            self.navigationController?.popViewController(animated: true)
+            self.dismissView()
         }
+    }
+    
+    func dismissView(){
+        self.navigationController?.popViewController(animated: true)
     }
 }
