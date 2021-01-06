@@ -21,45 +21,45 @@ class ModelFirebase {
         ref.child("recipes")
             //.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
             .observe(.value, with:{ (snapshot: DataSnapshot) in
-            
-            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-                var data = [Recipe]();
                 
-                for snap in snapshot {
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let recipe = Recipe(json: postDict)
-                        data.append(recipe)
-                    } else {
-                        print("failed to convert")
+                if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                    var data = [Recipe]();
+                    
+                    for snap in snapshot {
+                        if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                            let recipe = Recipe(json: postDict)
+                            data.append(recipe)
+                        } else {
+                            print("failed to convert")
+                        }
                     }
+                    
+                    callback(data)
                 }
-                
-                callback(data)
-            }
-        })
+            })
     }
     
     func getCategoryRecipesFB(since:Int64, categoryId:String, callback: @escaping ([Recipe]?)->Void){
         ref.child("recipes")
             //.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
             .observe(.value, with:{ (snapshot: DataSnapshot) in
-            
-            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-                var data = [Recipe]();
                 
-                for snap in snapshot {
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let recipe = Recipe(json: postDict)
-                        data.append(recipe)
-                    } else {
-                        print("failed to convert")
+                if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                    var data = [Recipe]();
+                    
+                    for snap in snapshot {
+                        if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                            let recipe = Recipe(json: postDict)
+                            data.append(recipe)
+                        } else {
+                            print("failed to convert")
+                        }
                     }
+                    
+                    let categoryData = data.filter{recipe in return recipe.CategoryId == categoryId}
+                    callback(categoryData)
                 }
-                
-                let categoryData = data.filter{recipe in return recipe.CategoryId == categoryId}
-                callback(categoryData)
-            }
-        })
+            })
     }
     
     
@@ -67,67 +67,77 @@ class ModelFirebase {
         ref.child("categories")
             //.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
             .observe(.value, with:{ (snapshot: DataSnapshot) in
-            
-            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-                var data = [Category]();
                 
-                for snap in snapshot {
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let category = Category(json: postDict)
-                        data.append(category)
-                    } else {
-                        print("failed to convert")
+                if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                    var data = [Category]();
+                    
+                    for snap in snapshot {
+                        if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                            let category = Category(json: postDict)
+                            data.append(category)
+                        } else {
+                            print("failed to convert")
+                        }
                     }
+                    
+                    callback(data)
                 }
+            })
+    }
+    
+    func getFavoritesFB(since:Int64, callback: @escaping ([Favorite]?)->Void){
+        ref.child("favorites")
+            //.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
+            .observe(.value, with:{ (snapshot: DataSnapshot) in
                 
-                callback(data)
-            }
-        })
+                if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                    var data = [Favorite]();
+                    
+                    for snap in snapshot {
+                        if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                            let favorite = Favorite(json: postDict)
+                            data.append(favorite)
+                        } else {
+                            print("failed to convert")
+                        }
+                    }
+                    
+                    callback(data)
+                }
+            })
     }
     
     func getUser(since:Int64, uid:String, callback: @escaping (User?)->Void){
         ref.child("users")
             //.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
             .observe(.value, with:{ (snapshot: DataSnapshot) in
-            
-            if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
-                var data = [User]();
                 
-                for snap in snapshot {
-                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let user = User(json: postDict)
-                        data.append(user)
-                    } else {
-                        print("failed to convert")
+                if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                    var data = [User]();
+                    
+                    for snap in snapshot {
+                        if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                            let user = User(json: postDict)
+                            data.append(user)
+                        } else {
+                            print("failed to convert")
+                        }
                     }
+                    
+                    let user = data.filter{u in return u.Id == uid}.first
+                    callback(user)
                 }
-                
-                let user = data.filter{u in return u.Id == uid}.first
-                callback(user)
-            }
-        })
+            })
     }
     
-    // make async
-    func deleteRecipe(recipe: Recipe){
-          //let uid = Auth.auth().currentUser!.uid
-          //let storage = FIRStorage.storage().reference(forURL: "gs://cloudcamerattt.appspot.com")
-
-          // Remove the post from the DB
-            ref.child("recipes").child(recipe.Id).removeValue { (error, dbReference)  in
+    
+    
+    func deleteRecipe(recipe: Recipe, callback: @escaping ()->Void){
+        ref.child("recipes").child(recipe.Id).removeValue { (error, dbReference)  in
             if error != nil {
                 print("error \(String(describing: error))")
             }
-          }
-          // Remove the image from storage
-//          let imageRef = storage.child("posts").child(uid).child("\(selectedPost.postID).jpg")
-//          imageRef.delete { error in
-//            if let error = error {
-//              // Uh-oh, an error occurred!
-//            } else {
-//             // File deleted successfully
-//            }
-//          }
+        }
     }
     
     func saveImage(image:UIImage, imageName:String, callback:@escaping (String)->Void) {
