@@ -85,4 +85,10 @@ class RecipeModel {
             callback(finalData);
         }
     }
+    
+    func getRecipebyId(recipeId:String, callback: @escaping (Recipe?)->Void){
+        modelFirebase.getRecipe(recipe: recipeId){ (re) in
+            callback(re)
+        }
+    }
 }

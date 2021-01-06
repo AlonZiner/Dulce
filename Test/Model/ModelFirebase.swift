@@ -107,6 +107,9 @@ class ModelFirebase {
             })
     }
     
+    
+    
+    
     func getUser(since:Int64, uid:String, callback: @escaping (User?)->Void){
         ref.child("users")
             //.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
@@ -130,7 +133,27 @@ class ModelFirebase {
             })
     }
     
-    
+    func getRecipe(recipe:String, callback: @escaping (Recipe?)->Void){
+        ref.child("recipes")
+            .queryOrdered(byChild: "id").queryEqual(toValue: recipe)
+            .observe(.value, with:{ (snapshot: DataSnapshot) in
+                if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
+                    var data = [Recipe]();
+                    
+                    for snap in snapshot {
+                        if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                            let rec = Recipe(json: postDict)
+                            data.append(rec)
+                        } else {
+                            print("failed to convert")
+                        }
+                    }
+                    
+                    let recipe = data.filter{u in return u.Id == recipe}.first
+                    callback(recipe)
+                }
+            })
+    }
     
     func deleteRecipe(recipe: Recipe, callback: @escaping ()->Void){
         ref.child("recipes").child(recipe.Id).removeValue { (error, dbReference)  in
