@@ -40,6 +40,15 @@ class RecipeViewController: UIViewController {
         {
             picture.kf.setImage(with: url)
         }
+        
+        UserModel.instance.getUser(uid: recipe!.Publisher){ (user:User?) in
+            if (user != nil) {
+                self.publisherLabel.text = user?.Name ?? "Profile"
+                
+                //let url = URL(string: user?.Picture ?? "")
+                //self.profileImage.kf.setImage(with: url)
+            }
+        }
     }
     
     @IBAction func edit(_ sender: Any) {
