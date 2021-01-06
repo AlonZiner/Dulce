@@ -16,7 +16,23 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "65"
             endingLineNumber = "65"
-            landmarkName = "edit(_:)"
+            landmarkName = "addToFavoritesAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A39E0939-BFCC-4C76-95A9-62DF8501B49A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Test/ViewControllers/FavoritesTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "tableView(_:didSelectRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
