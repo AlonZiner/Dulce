@@ -31,38 +31,10 @@
                         <color key="backgroundColor" red="0.84313725490196079" green="0.85882352941176465" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="tzc-1P-IBD"/>
-                    <connections>
-                        <segue destination="tvl-mK-ryi" kind="show" identifier="LoginToRegister" id="PM5-Ia-pHG"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I40-Lk-2Kd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="42.028985507246382" y="0.0"/>
-        </scene>
-        <!--Register View Controller-->
-        <scene sceneID="A5R-H5-sPc">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="we3-qc-NEx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController storyboardIdentifier="Register" id="tvl-mK-ryi" customClass="RegisterViewController" customModule="Dulce" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Fc6-LU-95a">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b20-fT-ccV">
-                                <rect key="frame" x="186" y="200" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="cKU-5B-dRt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="4nC-YP-t0s"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="42" y="728"/>
         </scene>
         <!--Custom Tab Bar Controller View Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -231,12 +203,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9K-M8-LVo">
+                                <rect key="frame" x="360" y="362" width="25" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="tintColor" red="0.25098039220000001" green="0.57254901960000004" blue="0.54901960780000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="star" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToFavoritesAction:" destination="4rK-dI-NAE" eventType="touchUpInside" id="V9a-IO-pmL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WEB-PO-Bcb"/>
                         <color key="backgroundColor" red="0.84313725490196079" green="0.85882352941176465" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Recipe" id="aEc-hv-sDi"/>
                     <connections>
+                        <outlet property="addToFavorites" destination="n9K-M8-LVo" id="uUG-nF-8f4"/>
                         <outlet property="deleteBtn" destination="DU3-g6-mys" id="Ch9-st-Yld"/>
                         <outlet property="difficualtyLabel" destination="Mou-lp-Ld0" id="G6d-RM-doc"/>
                         <outlet property="editBtn" destination="uBT-Nc-ltC" id="RnG-JY-2dT"/>
@@ -364,7 +350,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g7K-zu-z1x"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.84313725490196079" green="0.85882352941176465" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="6nF-Rq-i4t"/>
                     <connections>
@@ -619,6 +605,7 @@
         <image name="logo1" width="434" height="434"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="recipe" width="640" height="546"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

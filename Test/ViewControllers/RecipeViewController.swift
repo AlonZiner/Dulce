@@ -22,6 +22,7 @@ class RecipeViewController: UIViewController {
     
     @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var addToFavorites: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,11 @@ class RecipeViewController: UIViewController {
         {
             picture.kf.setImage(with: url)
         }
+        configureUI()
+    }
+    
+    @IBAction func addToFavoritesAction(_ sender: Any) {
+        addToFavorites.isSelected.toggle()
     }
     
     @IBAction func edit(_ sender: Any) {
@@ -50,6 +56,14 @@ class RecipeViewController: UIViewController {
         resultViewController.recipe = self.recipe
         resultViewController.modalPresentationStyle = .overCurrentContext
         present(resultViewController, animated: true, completion: nil)
+    }
+    
+    
+    func configureUI() {
+        let image = UIImage(systemName: "star")
+        let imageFilled = UIImage(systemName: "star.fill")
+        addToFavorites.setImage(image, for: .normal)
+        addToFavorites.setImage(imageFilled, for: .selected)
     }
     
 }
