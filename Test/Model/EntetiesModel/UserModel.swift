@@ -14,7 +14,9 @@ class UserModel {
     let modelFirebase = ModelFirebase()
     let modelSql = ModelSql2.instance
     
-    init(){ }
+    static let instance = UserModel()
+    
+    private init(){ }
     
     func addUser(user: User) -> () {
         modelFirebase.ref.child("users").child(user.Id).setValue(user.toJson())

@@ -113,10 +113,10 @@ class ModelSql2{
         var sqlite3_stmt: OpaquePointer? = nil
         var data = [User]()
         
-        if (sqlite3_prepare_v2(database,"SELECT * from USERS where id like ?;",-1,&sqlite3_stmt,nil)
+        if (sqlite3_prepare_v2(database,"SELECT * from USERS;",-1,&sqlite3_stmt,nil)
             == SQLITE_OK){
             
-            sqlite3_bind_text(sqlite3_stmt, 1, uid,-1,nil);
+            //sqlite3_bind_text(sqlite3_stmt, 1, uid,-1,nil);
             
             while(sqlite3_step(sqlite3_stmt) == SQLITE_ROW){
 
@@ -131,7 +131,9 @@ class ModelSql2{
         }
         
         sqlite3_finalize(sqlite3_stmt)
-        return data.first
+        
+        let users = data.filter{user in return user.Id == uid}
+        return users.first
     }
     
     // MARK: RECIPES

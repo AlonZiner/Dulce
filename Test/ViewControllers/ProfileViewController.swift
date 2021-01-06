@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
    
-    let model = UserModel()
+    let model = UserModel.instance
     var uid:String = ""
     var user: User?
     var selectedImage:UIImage?;
@@ -65,11 +65,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         self.profileImage.image = selectedImage;
         
         // save user
-        let model = UserModel()
-        
-        model.modelFirebase.saveImage(image: selectedImage!, imageName: self.uid) { (url) in
+        UserModel.instance.modelFirebase.saveImage(image: selectedImage!, imageName: self.uid) { (url) in
             self.user?.Picture = url
-            model.addUser(user: self.user!)
+            self.model.addUser(user: self.user!)
             self.navigationController?.popViewController(animated: true)
         }
         

@@ -19,7 +19,7 @@ class ModelFirebase {
     
     func getAllRecipesFB(since:Int64, callback: @escaping ([Recipe]?)->Void){
         ref.child("recipes")
-            .queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
+            //.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
             .observe(.value, with:{ (snapshot: DataSnapshot) in
             
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
@@ -41,7 +41,7 @@ class ModelFirebase {
     
     func getCategoryRecipesFB(since:Int64, categoryId:String, callback: @escaping ([Recipe]?)->Void){
         ref.child("recipes")
-            .queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
+            //.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
             .observe(.value, with:{ (snapshot: DataSnapshot) in
             
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
@@ -65,7 +65,7 @@ class ModelFirebase {
     
     func getAllCategoriesFB(since:Int64, callback: @escaping ([Category]?)->Void){
         ref.child("categories")
-            .queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
+            //.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
             .observe(.value, with:{ (snapshot: DataSnapshot) in
             
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
@@ -87,7 +87,7 @@ class ModelFirebase {
     
     func getUser(since:Int64, uid:String, callback: @escaping (User?)->Void){
         ref.child("users")
-            .queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
+            //.queryOrdered(byChild: "lastUpdate").queryStarting(atValue: since + 1)
             .observe(.value, with:{ (snapshot: DataSnapshot) in
             
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot] {
